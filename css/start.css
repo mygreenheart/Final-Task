@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  font-family: "Open Sans";
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+}
+.conteiner {
+  width: 1180px;
+  margin: auto;
+}
+
+.header__conteiner1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__conteiner1 .h1 {
+}
+.header__conteiner1 .bag {
+  width: 205px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.bag a {
+  font-family: "Roboto";
+  font-size: 12px;
+  color: #000000;
+}
+.header__conteiner2 .nav_a {
+  color: #000000;
+  font-size: 13px;
+  margin-right: 60px;
+}
+.header__conteiner2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__search .input {
+  height: 25px;
+  width: 120px;
+  border: none;
+  border-bottom: 2px solid #e5e5e5;
+  background: url(/img/ico.png) no-repeat scroll 12px 12px;
+  background-position: right;
+}
+/* first section */
+.section_banners {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.section_banners .banner {
+  position: relative;
+}
+
+.section_banners .banner .text {
+  position: absolute;
+  top: 65px;
+  right: 100px;
+  text-align: center;
+}
+
+.girl h2 {
+  margin-bottom: -3px;
+}
+.text span {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  color: #757575;
+}
+.nike .text {
+  right: 100px;
+}
+/* second section */
+.best_offer {
+  margin-top: 100px;
+}
+.title {
+  text-align: center;
+}
+.title h1 {
+  font-size: 50px;
+  margin-bottom: -10px;
+}
+.best_offer .title p {
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+}
+.plus {
+  font-size: 34px;
+}
+.banner_conteiner {
+  margin-top: 115px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.banner_conteiner p {
+  font-weight: normal;
+}
+.banner {
+  position: relative;
+}
+.first_banner:before {
+  content: url(/img/New.png);
+  position: absolute;
+  top: 20px;
+}
+
+.banner_conteiner .banner .arrow-up {
+  position: absolute;
+  top: -40px;
+  left: 100px;
+}
+.banner_conteiner .banner .arrow-down {
+  position: absolute;
+  bottom: -40px;
+  left: 100px;
+}
+.third_banner .total_price {
+  margin-left: 15px;
+}
+.third_banner h2 {
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 32px;
+}
+.third_banner span {
+  right: 55px;
+  position: relative;
+  font-family: "Roboto";
+  font-weight: 100;
+  font-size: 26px;
+  color: #757575;
+}
+.third_banner span:before {
+  border-bottom: 3px solid red;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 50%;
+  transform: rotate(-7deg);
+}
+input[type="button"] {
+  margin-top: 30px;
+  height: 73px;
+  width: 340px;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  font-size: 24px;
+  font-family: "Open Sans";
+  font-weight: bold;
+}
+
+/* third section */
+.new_arivals {
+  margin: auto auto;
+  margin-top: 200px;
+}
+.new_arivals .second_banner:before {
+  content: url(/img/New.png);
+  position: absolute;
+  top: 20px;
+}
+.new_arivals .banner_conteiner {
+  margin-top: 95px;
+}
+.new_arivals .button_conteiner{
+  margin: 75px 420px 0 420px;
+}
