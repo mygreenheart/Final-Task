@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template</title>
-
-
-    <link rel="stylesheet" href="./css/start.css">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="./css/catalog.css">
     <link rel="stylesheet" href="./css/siteheaderandfooter.css">
 </head>
 
@@ -44,118 +42,85 @@
             </div>
         </div>
     </header>
-    <!-- FIRST BANNER -->
-    <section class="section_banners">
+    <!-- FILTER -->
+    <section class="filter">
         <div class="conteiner">
-            <div class="banner_conteiner">
-                <a href="page_details.html">
-                    <div class="banner nike">
-                        <div class="text">
-                            <h2>Nike Red</h2>
-                        </div>
-                        <p class="view_item">dodelt</p>
-                        <img src="/img/red-nike.png" alt="red nike">
-                    </div>
-                </a>
-                <a href="catalog.html">
-                    <div class="banner girl">
-                        <div class="text">
-                            <h2>Caps & Hats</h2>
-                            <span>Sale -50%</span>
-                        </div>
-                        <img src="/img/girl.png" alt="girl">
-                    </div>
-                </a>
+            <!-- first select -->
+            <div class="select">
+                <p>Fashion</p>
+                <select name="style" id="" class="filter_select">
+                    <option value="" class="selected">Casual style</option>
+                    <option value="" class="filter_option">Not selected</option>
+                    <option value="" class="filter_option">#</option>
+                </select>
+            </div>
+            <!-- second select -->
+            <div class="select">
+                <p>Product type</p>
+                <select name="style" id="" class="filter_select">
+                    <option value="" class="selected">Product type</option>
+                    <option value="" class="filter_option">Not selected</option>
+                    <option value="" class="filter_option">#</option>
+                </select>
+            </div>
+            <!-- third select -->
+            <div class="select">
+                <p>Color</p>
+                <select name="style" id="" class="filter_select">
+                    <option value="Color" class="selected">Color</option>
+                    <option value="" class="filter_option">Black</option>
+                    <option value="" class="filter_option">Blue</option>
+                    <option value="" class="filter_option">Red</option>
+                    <option value="" class="filter_option">Green</option>
+                    <option value="" class="filter_option">Golden</option>
+                </select>
+            </div>
+            <!-- four select -->
+            <div class="select">
+                <p>Brand</p>
+                <select name="style" id="" class="filter_select">
+                    <option value="" class="selected" selected>Brand</option>
+                    <option value="" class="filter_option"> Not selected</option>
+                    <option value="" class="filter_option">#</option>
+                </select>
+            </div>
+            <!-- five select -->
+            <div class="select">
+                <p>Size</p>
+                <select name="style" id="" class="filter_select">
+                    <option value="" class="selected">Size</option>
+                    <option value="" class="filter_option">Not selected</option>
+                    <option value="" class="filter_option">#</option>
+                </select>
+            </div>
+            <!-- six select -->
+
+            <div class="select">
+                <p>Price range</p>
+                <select name="style" id="" class="filter_select">
+                    <option value="" class="selected">Price range</option>
+                    <option value="" class="filter_option">Not selected</option>
+                    <option value="" class="filter_option">#</option>
+                </select>
             </div>
         </div>
     </section>
-    <!-- BEST OFFER -->
-    <section class="best_offer">
-        <div class="conteiner">
-            <div class="title">
-                <h1>Best offer</h1>
-                <p>This offer is valid in-store and online. Prices displayed reflect this additional discount. This
-                    offer ends at 11:59 GMT on March 1st 2019</p>
-            </div>
-            <div class="banner_conteiner">
-                <a href="page_details.html">
-                  
-                    <div class="banner first_banner">
-                        <img src="/img/arrow-up.png" alt="arrow-up" srcset="" class="arrow-up">
-                        <p class="view_item">View item</p>
-                        <img src="/img/best_offer1.png" alt="best offer">
-                        <h3>Only Skinny Jeans</h3>
-                        <p class="price">£65.50</p>
-                        <img src="/img/arrow-down.png" alt="arrow-down" srcset="" class="arrow-down">
-                    </div>
-                </a>
-                <span class="plus">+</span>
-              <a href="page_details.html">  <div class="banner second_banner">
-                    <img src="/img/arrow-up.png" alt="arrow-up" srcset="" class="arrow-up">
-                    <img src="/img/best_offer2.png" alt="best offer">
-                    <p class="view_item">View item</p>
-                    <h3>Levi’s Jeans for women</h3>
-                    <p class="price">£95.50</p>
-                    <img src="/img/arrow-down.png" alt="arrow-down" srcset="" class="arrow-down">
-                </div>
-            </a>
-                <span class="plus">=</span>
-                <div class="third_banner">
-                    <div class="total_price">
-                        <span>£161.00</span>
-                        <h2>£146.00</h2>
-                    </div>
-                    <input type="button" value="Add to bag">
-                </div>
-            </div>
-        </div>
-    </section>
-
-
+    <!-- NEW ARRIVALS -->
     <section class="new_arivals">
-        <div class="conteiner">
-
-            <div class="title">
-                <h1>New arrivals</h1>
+        <div id="conteiner_new_arrivals">
+            
             </div>
-            <div class="banner_conteiner">
-                <a href="page_details.html">   <div class="banner first_banner">
-                    <p class="view_item">View item</p>
-                    <img src="/img/new_arrivals1.png" alt="cute girl">
-                    <h3>Only Skinny Jeans</h3>
-                    <p class="price">£65.50</p>
-                </div>
-                </a>
-                <a href="page_details.html">  <div class="banner second_banner">
-                    <p class="view_item">View item</p>
-                    <img src="/img/new_arrivals2.png" alt="cute girl">
-                    <h3>Neck Knitted Jumper</h3>
-                    <p class="price">£76.25</p>
-                </div>
-                </a>
-                <a href="page_details.html">  <div class="banner">
-                    <p class="view_item">View item</p>
-                    <img src="/img/new_arrivals3.png" alt="cute girl">
-                    <h3>Turtle Neck Jumper in Rib</h3>
-                    <p class="price">£130.25</p>
-                </div>
-                </a>
-                <a href="page_details.html">   <div class="banner">
-                    <p class="view_item">View item</p>
-                    <img src="/img/new_arrivals4.png" alt="cute girl">
-                    <h3>With Patchwork Crochet</h3>
-                    <p class="price">£80.60</p>
-                </div>
-                </a>
-            </div>
-            <div class="button_conteiner">
-                <input type="button" value="All arrivals">
-            </div>
-        </div>
-
     </section>
 
-    <!-- SECTION LINKS -->
+    <section class="mid_text">
+        <div class="conteiner">
+            <h1>Last weekend <span style="color:#d14b58 ;"> extra 50%</span> off on all reduced boots and shoulder bags
+            </h1>
+            <p>This offer is valid in-store and online. Prices displayed reflect this additional discount. This
+                offer ends at 11:59 GMT on March 1st 2019</p>
+        </div>
+    </section>
+    <!-- LINKS -->
     <section class="section_links">
         <div class="conteiner">
             <div class="links_conteiner">
@@ -229,6 +194,9 @@
         </div>
 
     </footer>
+    <script src="/js/catalog.js"></script>
+    <script src="/js/catalog_function.js"></script>
+
 </body>
 
 </html>

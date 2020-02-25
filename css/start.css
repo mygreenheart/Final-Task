@@ -1,63 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  font-family: "Open Sans";
-  font-weight: bold;
-}
 
-a {
-  text-decoration: none;
-}
-.conteiner {
-  width: 1180px;
-  margin: auto;
-}
-
-.header__conteiner1 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header__conteiner1 .bag {
-  width: 205px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.bag a {
-  font-family: "Roboto";
-  font-size: 12px;
-  color: #000000;
-}
-.header__conteiner2 .nav_a {
-  color: #000000;
-  font-size: 13px;
-  margin-right: 60px;
-}
-.header__conteiner2 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-}
-.header__search .input {
-  height: 25px;
-  width: 120px;
-  border: none;
-  border-bottom: 2px solid #e5e5e5;
-  background: url(/img/ico.png) no-repeat scroll 12px 12px;
-  background-position: right;
-}
-/* first section */
+/* BANNERS */
 .section_banners {
-  margin-top: 20px;
+  height: 385px;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+.banner_conteiner {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -65,14 +13,15 @@ a {
 .section_banners .banner {
   position: relative;
 }
-
 .section_banners .banner .text {
   position: absolute;
   top: 65px;
   right: 100px;
   text-align: center;
 }
-
+.girl {
+  border-left: 1px solid #e5e5e5;
+}
 .girl h2 {
   margin-bottom: -3px;
 }
@@ -84,7 +33,8 @@ a {
 .nike .text {
   right: 100px;
 }
-/* second section */
+
+/* BEST OFFER */
 .best_offer {
   margin-top: 100px;
 }
@@ -103,7 +53,7 @@ a {
 .plus {
   font-size: 34px;
 }
-.banner_conteiner {
+.best_offer .banner_conteiner {
   margin-top: 115px;
   display: flex;
   flex-direction: row;
@@ -123,7 +73,6 @@ a {
   position: absolute;
   top: 20px;
 }
-
 .banner_conteiner .banner .arrow-up {
   position: absolute;
   top: -40px;
@@ -169,10 +118,20 @@ input[type="button"] {
   font-weight: bold;
 }
 
-/* third section */
+/* NEW ARRIVALS */
 .new_arivals {
+  border-top: 1px solid #e5e5e5;
   margin: auto auto;
   margin-top: 200px;
+}
+.new_arivals .banner_conteiner {
+  margin-top: 115px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 .new_arivals .second_banner:before {
   content: url(/img/New.png);
@@ -184,88 +143,4 @@ input[type="button"] {
 }
 .new_arivals .button_conteiner {
   margin: 75px 420px 0 420px;
-}
-/* sections links */
-.section_links {
-  margin-top: 100px;
-  border: 2px solid #e5e5e5;
-}
-.section_links .conteiner,
-.contact_conteiner,
-.links_conteiner {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
- 
-}
-.section_links h3 {
-  line-height: 65px;
-}
-.links_conteiner,
-.contact_conteiner {
-  width: 590px;
-}
-.contact_conteiner {
-  flex-wrap: wrap;
-  margin-left: -100px;
-}
-.nav h1 {
-  font-size: 16px;
-}
-.nav .links ul {
-  position: relative;
-  list-style-type: none;
-}
-.nav .links li a {
-  color: #000000;
-  font-family: "Roboto";
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 40px;
-  display: inline;
-  font-weight: 300;
-}
-.contact_conteiner .questions,
-.order_by_phone {
-  margin-bottom: -30px;
-}
-.contact_conteiner .tweet {
-  position: relative;
-  left: 30px;
-  font-weight: 300;
-}
-.order_by_phone p {
-  font-family: "Roboto";
-  font-weight: 300;
-}
-.contact_conteiner .tweet img {
-  position: absolute;
-  left: -20px;
-}
-.anotation {
-  margin-right: 150px;
-  width: 308px;
-}
-.anotation .contact_logo img {
-  margin-right: 15px;
-}
-.anotation p {
-  font-weight: 100;
-  font-size: 16px;
-  font-family: "Times New Roman", Times, serif;
-  font-style: italic;
-}
-/* footer */
-.footer_content {
-  width: 1180px;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: center;
-}
-.footer_content nav a{
-  margin-left: 30px;
 }

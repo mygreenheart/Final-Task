@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  font-family: "Open Sans";
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: #000000;
+}
+a:hover {
+  color: #d14b58;
+}
+
+a .price {
+  color: #000;
+}
+.view_item {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  height: 340px;
+  width: 240px;
+  font-size: 22px;
+  line-height: 340px;
+  margin: auto auto;
+  text-align: center;
+  color: #d14b58;
+  background: rgba(0, 0, 0, 0.4);
+  transition: 0.5s ease;
+}
+a div:hover .view_item {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.conteiner {
+  width: 1180px;
+  margin: auto;
+}
+.header {
+  margin-bottom: 25px;
+}
+.header__conteiner1,
+.header__conteiner1 .bag,
+.header__conteiner2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__conteiner1 .bag {
+  width: 205px;
+}
+.header__conteiner1 {
+  margin-bottom: -20px;
+}
+.header__conteiner1 h1 {
+  font-size: 30px;
+  line-height: 65px;
+}
+.bag a {
+  font-family: "Roboto";
+  font-size: 12px;
+
+  line-height: 65px;
+}
+.header__conteiner2 .nav_a {
+  font-size: 13px;
+  margin-right: 60px;
+}
+.header__search .input {
+  height: 25px;
+  width: 120px;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  background: url(/img/ico.png) no-repeat scroll 12px 12px;
+  background-position: right;
+}
+
+/* sections links */
+.section_links {
+  margin-top: 130px;
+  height: 455px;
+  border-top: 1px solid #e5e5e5;
+}
+.section_links .conteiner,
+.contact_conteiner,
+.links_conteiner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.section_links .conteiner {
+  justify-content: space-between;
+}
+.section_links h3 {
+  line-height: 65px;
+}
+.links_conteiner,
+.contact_conteiner {
+  width: 590px;
+}
+.contact_conteiner {
+  border-left: 1px solid #e5e5e5;
+  flex-wrap: wrap;
+  height: 450px;
+}
+.nav h1 {
+  font-size: 16px;
+}
+.nav .links ul {
+  position: relative;
+  list-style-type: none;
+}
+.nav .links li a {
+  font-family: "Roboto";
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 40px;
+  display: inline;
+  font-weight: 300;
+  margin-left: -45px;
+}
+.contact_conteiner .questions,
+.order_by_phone {
+  margin-bottom: -30px;
+}
+.contact_conteiner .tweet {
+  position: relative;
+  left: 30px;
+  font-weight: 300;
+}
+.order_by_phone p {
+  font-family: "Roboto";
+  font-weight: 300;
+}
+.contact_conteiner .tweet img {
+  position: absolute;
+  left: -20px;
+}
+.anotation {
+  margin-right: 150px;
+  width: 308px;
+}
+.anotation .contact_logo img {
+  margin-right: 15px;
+}
+.anotation p {
+  font-weight: 100;
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+}
+
+/* footer */
+.footer {
+  border-top: 1px solid #e5e5e5;
+}
+.footer_content {
+  width: 1180px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer_content nav a {
+  margin-left: 30px;
+}
