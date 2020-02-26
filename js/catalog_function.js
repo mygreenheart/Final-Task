@@ -11,23 +11,19 @@ let catalog = window.catalog,
     a = document.getElementsByClassName("filter_a"),
     p = document.getElementsByClassName("filter_p");
 
-function createDiv(conteiner, img, name, price) {
+function createDiv(conteiner, img, name, price, oldPrice, isNew) {
     let divBanner = document.createElement("div"),
+        imgNew = document.createElement("img"),
         aBanner = document.createElement("a"),
         pViewItem = document.createElement("p"),
         imgBanner = document.createElement("img"),
         h3Name = document.createElement("h3"),
-        pPrice = document.createElement("p");
+        pPrice = document.createElement("p"),
+        oldPriceSpan = document.createElement("span");
 
-
-    //     <div class="banner">
-    //         <p class="view_item">View item</p>
-    //         <img src="/img/new_arrivals3.png" alt="cute girl">
-    //             <h3>Turtle Neck Jumper in Rib</h3>
-    //             <p class="price">£130.25</p>
-    // </div>
     divBanner.className = "banner";
     pViewItem.className = "view_item";
+
     pViewItem.textContent = "View Item";
     pPrice.className = "price";
     aBanner.href = "#";
@@ -38,21 +34,39 @@ function createDiv(conteiner, img, name, price) {
     imgBanner.alt = "cute girl"
     h3Name.textContent = name;
     pPrice.textContent = "£" + price;
+    //Add NEW img
+    if (isNew == true) {
+        imgNew.src = "/img/new.png"
+        imgNew.className = "imgNew";
+        divBanner.appendChild(imgNew)
+    }
 
     conteiner.appendChild(aBanner);
     aBanner.appendChild(divBanner);
     divBanner.appendChild(pViewItem);
     divBanner.appendChild(imgBanner);
     divBanner.appendChild(h3Name);
+    //Add OLDPRICE
+    if (price != oldPrice) {
+        oldPriceSpan.className = "old_price";
+        oldPriceSpan.textContent = "£" + oldPrice + ".00";
+        divBanner.appendChild(oldPriceSpan);
+    }
     divBanner.appendChild(pPrice);
+
+
 }
 
 function drawBanners(conteiner, from, to) {
     for (var i = from; i < to; i++) {
-        let img = window.catalog[i].thumbnail,
-            name = window.catalog[i].title,
-            price = window.catalog[i].price;
-        createDiv(conteiner, img, name, price);
+        let img = catalog[i].thumbnail,
+            name = catalog[i].title,
+            price = catalog[i].discountedPrice,
+            oldPrice = catalog[i].price,
+            isNew = catalog[i].hasNew;
+
+
+        createDiv(conteiner, img, name, price, oldPrice, isNew);
     }
 }
 

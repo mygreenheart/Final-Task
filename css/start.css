@@ -69,7 +69,7 @@
   position: relative;
 }
 .first_banner:before {
-  content: url(/img/New.png);
+  content: url(/img/new.png);
   position: absolute;
   top: 20px;
 }

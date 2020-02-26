@@ -38,7 +38,6 @@ a div:hover .view_item {
   cursor: pointer;
 }
 input[type="button"] {
-  margin-top: 30px;
   height: 73px;
   width: 340px;
   border: 1px solid #e5e5e5;
@@ -99,6 +98,8 @@ input[type="button"]:hover {
 
 /* sections links */
 .section_links {
+  width: 1300px;
+  margin: auto;
   margin-top: 130px;
   height: 455px;
   border-top: 1px solid #e5e5e5;
@@ -178,6 +179,8 @@ input[type="button"]:hover {
 }
 /* footer */
 .footer {
+  width: 1300px;
+  margin: auto;
   border-top: 1px solid #e5e5e5;
 }
 .footer_content {
@@ -186,7 +189,7 @@ input[type="button"]:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
