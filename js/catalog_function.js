@@ -2,7 +2,12 @@
 let catalog = window.catalog,
     conteiner1 = document.getElementById("conteiner_new_arrivals"),
     conteiner2 = document.getElementById("conteiner_show_more"),
-    select1 = document.getElementById("fashion");
+    select1 = document.getElementById("fashion"),
+    select2 = document.getElementById("fashion"),
+    select3 = document.getElementById("color"),
+    select4 = document.getElementById("brand"),
+    select5 = document.getElementById("size"),
+    select6 = document.getElementById("price_range");
 
 function createDiv(conteiner, img, name, price) {
     let divBanner = document.createElement("div"),
@@ -49,20 +54,47 @@ function drawBanners(conteiner, from, to) {
     }
 }
 
-function fillAllSelect(select) {
+function fillAllSelect(select1, select3, select5) {
 
-    for (let i = 0; i < catalog.length; i++) {
-        let option = document.createElement("option");
-        option.setAttribute("value", catalog[i].fashion);
-
-        option.innerText = catalog[i].fashion;
-        select.appendChild(option);
-
-
-
+    for (const e of catalog) {
+        fashion.add(e.fashion)
+        for (let i = 0; i < e.colors.length; i++) {
+            color.add(e.colors[i])
+        }
+        for (let i = 0; i < e.sizes.length; i++) {
+            size.add(e.sizes[i])
+        }
+    }
+    // Create optiom for select
+    for (const e of fashion) {
+        let li = document.createElement("li"),
+            a = document.createElement("a");
+        a.innerText = e;
+        a.name = e;
+        li.appendChild(a);
+        select1.appendChild(li);
+    }
+    for (const e of color) {
+        let li = document.createElement("li"),
+            a = document.createElement("a");
+        a.innerText = e;
+        li.appendChild(a);
+        select3.appendChild(li);
+    }
+    for (const e of fashion) {
+        let li = document.createElement("li"),
+            a = document.createElement("a");
+        a.innerText = e;
+        li.appendChild(a);
+        select5.appendChild(li);
     }
 }
 
-fillAllSelect(select1);
+select1.onclick = function(event){
+    let target = event.target;
+for()
+
+}
+fillAllSelect(select1, select3, select5);
 drawBanners(conteiner1, 0, 4)
 drawBanners(conteiner2, 4, 12)

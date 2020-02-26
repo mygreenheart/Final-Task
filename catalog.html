@@ -45,61 +45,48 @@
     <!-- FILTER -->
     <section class="filter">
         <div class="conteiner">
-            <!-- first select -->
-            <div class="select" >
-                <p>Fashion</p>
-                <select name="style" id="fashion" class="filter_select">
-                    <option value="" class="selected">Casual style</option>
-                </select>
-            </div>
-            <!-- second select -->
-            <div class="select" >
-                <p>Product type</p>
-                <select name="style" id="product_type" class="filter_select">
-                    <option value="" class="selected">Product type</option>
+            <nav class="filter_nav">
+                <ul class="topmenu">
+                    <li class="filter_li"><a href="#" class="filter_a">Fashion</a>
+                        <ul class="submenu" id="fashion">
+                            <li><a>Not selected</a></li>
+                        </ul>
+                    </li>
+                    <li class="filter_li"><a href="#" class="filter_a">Product type</a>
+                        <ul class="submenu">
+                            <li><a href="">Not selected</a></li>
+                            <li><a href="">T-shirt</a></li>
+                            <li><a href="">Jeans</a></li>
+                        </ul>
+                    </li>
+                    <li class="filter_li"><a href="#" class="filter_a">Color </a>
+                        <ul class="submenu" id="color">
+                            <li><a href="">Not selected</a></li>
+                        </ul>
+                    </li>
+                    <li class="filter_li"><a href="#" class="filter_a">Brand</a>
+                        <ul class="submenu" id="brand">
+                            <li><a href="">Not selected</a></li>
+                            <li><a href="">Levi's</a></li>
+                        </ul>
+                    </li>
+                    <li class="filter_li"><a href="#" class="filter_a">Size</a>
+                        <ul class="submenu" id="size">
+                            <li><a href="">Not selected</a></li>
+                        </ul>
+                    </li>
+                    <li class="filter_li"><a href="#" class="filter_a">Price range</a>
+                        <ul class="submenu" id="price_range">
+                            <li><a href="">Not selected</a></li>
+                            <li><a href="">£0 - £50</a></li>
+                            <li><a href="">£50 - £100</a></li>
+                            <li><a href="">£100 - £150</a></li>
+                            <li><a href="">£150 - £200</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
 
-                </select>
-            </div>
-            <!-- third select -->
-            <div class="select" >
-                <p>Color</p>
-                <select name="style" id="color" class="filter_select">
-                    <option value="Color" class="selected">Color</option>
-                    <option value="" class="filter_option">Black</option>
-                    <option value="" class="filter_option">Blue</option>
-                    <option value="" class="filter_option">Red</option>
-                    <option value="" class="filter_option">Green</option>
-                    <option value="" class="filter_option">Golden</option>
-                </select>
-            </div>
-            <!-- four select -->
-            <div class="select" >
-                <p>Brand</p>
-                <select name="style" id="brand" class="filter_select">
-                    <option value="" class="selected" selected>Brand</option>
-                    <option value="" class="filter_option"> Not selected</option>
-                    <option value="" class="filter_option">#</option>
-                </select>
-            </div>
-            <!-- five select -->
-            <div class="select" >
-                <p>Size</p>
-                <select name="style" id="size" class="filter_select">
-                    <option value="" class="selected">Size</option>
-                    <option value="" class="filter_option">Not selected</option>
-                    <option value="" class="filter_option">#</option>
-                </select>
-            </div>
-            <!-- six select -->
-
-            <div class="select" >
-                <p>Price range</p>
-                <select name="style" id="price_range" class="filter_select">
-                    <option value="" class="selected">Price range</option>
-                    <option value="" class="filter_option">Not selected</option>
-                    <option value="" class="filter_option">#</option>
-                </select>
-            </div>
         </div>
     </section>
     <!-- NEW ARRIVALS -->
