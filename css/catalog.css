@@ -21,11 +21,17 @@
 }
 .filter_a {
   position: absolute;
-  width: 110px;
+  width: 130px;
   top: 25px;
   right: 80px;
   bottom: 20px;
   left: 20px;
+}
+.filter_li p{
+  font-size: 12px;
+  font-family: "Roboto";
+  margin-left: 20px;
+  opacity: 0;
 }
 .topmenu nav a {
   display: block;
@@ -53,9 +59,8 @@
 .topmenu .submenu {
   border: 1px solid #e5e5e5;
   position: absolute;
-  background-color: #ffffff;
   left: 0;
-  top: 70px;
+  top: 65px;
   visibility: hidden;
   opacity: 0;
   z-index: 5;
@@ -67,14 +72,15 @@
 }
 .topmenu > li:hover .submenu {
   visibility: visible;
+  background-color: #ffffff;
   opacity: 1;
   transform: perspective(600px) rotateX(0deg);
 }
+
 li {
   list-style: none;
 }
 .submenu li a {
-  margin-left: -20px;
   line-height: 30px;
   font-size: 13px;
 }
