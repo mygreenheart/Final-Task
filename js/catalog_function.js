@@ -1,7 +1,10 @@
 "use strict"
-let conteiner = document.getElementById("conteiner_new_arrivals");
+let catalog = window.catalog,
+    conteiner1 = document.getElementById("conteiner_new_arrivals"),
+    conteiner2 = document.getElementById("conteiner_show_more"),
+    select1 = document.getElementById("fashion");
 
-function createDiv(img, name, price) {
+function createDiv(conteiner, img, name, price) {
     let divBanner = document.createElement("div"),
         aBanner = document.createElement("a"),
         pViewItem = document.createElement("p"),
@@ -21,11 +24,13 @@ function createDiv(img, name, price) {
     pViewItem.textContent = "View Item";
     pPrice.className = "price";
     aBanner.href = "#";
+    imgBanner.width = "240"
+    imgBanner.height = "340"
 
     imgBanner.src = img;
     imgBanner.alt = "cute girl"
     h3Name.textContent = name;
-    pPrice.textContent = "£"+price;
+    pPrice.textContent = "£" + price;
 
     conteiner.appendChild(aBanner);
     aBanner.appendChild(divBanner);
@@ -35,13 +40,29 @@ function createDiv(img, name, price) {
     divBanner.appendChild(pPrice);
 }
 
-function drawBanners(countDrow) {
-    conteiner.innerHTML = "";
-    for (var i = 0; i < countDrow; i++) {
+function drawBanners(conteiner, from, to) {
+    for (var i = from; i < to; i++) {
         let img = window.catalog[i].thumbnail,
             name = window.catalog[i].title,
             price = window.catalog[i].price;
-        createDiv(img, name, price);
+        createDiv(conteiner, img, name, price);
     }
 }
-drawBanners(4)
+
+function fillAllSelect(select) {
+
+    for (let i = 0; i < catalog.length; i++) {
+        let option = document.createElement("option");
+        option.setAttribute("value", catalog[i].fashion);
+
+        option.innerText = catalog[i].fashion;
+        select.appendChild(option);
+
+
+
+    }
+}
+
+fillAllSelect(select1);
+drawBanners(conteiner1, 0, 4)
+drawBanners(conteiner2, 4, 12)
