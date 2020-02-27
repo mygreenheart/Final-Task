@@ -110,11 +110,9 @@ input[type="button"]:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
-}
-.section_links .conteiner {
   justify-content: space-between;
 }
+
 .section_links h3 {
   line-height: 65px;
 }

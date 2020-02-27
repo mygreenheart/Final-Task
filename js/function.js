@@ -1,17 +1,8 @@
 "use strict"
-let catalog = window.catalog,
-    conteiner1 = document.getElementById("conteiner_new_arrivals"),
-    conteiner2 = document.getElementById("conteiner_show_more"),
-    select1 = document.getElementById("fashion"),
-    select2 = document.getElementById("product_type"),
-    select3 = document.getElementById("color"),
-    select4 = document.getElementById("brand"),
-    select5 = document.getElementById("size"),
-    select6 = document.getElementById("price_range"),
-    a = document.getElementsByClassName("filter_a"),
-    p = document.getElementsByClassName("filter_p");
+let bestOffer = window.bestOffer,
+    catalog = window.catalog;
 
-function createDiv(conteiner, img, name, price, oldPrice, isNew) {
+function createDiv(conteiner, img, name, price, oldPrice, isNew, id) {
     let divBanner = document.createElement("div"),
         imgNew = document.createElement("img"),
         aBanner = document.createElement("a"),
@@ -25,7 +16,8 @@ function createDiv(conteiner, img, name, price, oldPrice, isNew) {
     pViewItem.className = "view_item";
 
     pViewItem.textContent = "View Item";
-    pPrice.className = "price";
+    pPrice.className = "price " + id;
+
     aBanner.href = "#";
     imgBanner.width = "240"
     imgBanner.height = "340"
@@ -53,10 +45,7 @@ function createDiv(conteiner, img, name, price, oldPrice, isNew) {
         divBanner.appendChild(oldPriceSpan);
     }
     divBanner.appendChild(pPrice);
-
-
 }
-
 function drawBanners(conteiner, from, to) {
     for (var i = from; i < to; i++) {
         let img = catalog[i].thumbnail,
@@ -69,7 +58,6 @@ function drawBanners(conteiner, from, to) {
         createDiv(conteiner, img, name, price, oldPrice, isNew);
     }
 }
-
 function fillAllSelect(select1, select3, select5) {
     let fashion = new Set()
     let color = new Set()
@@ -110,65 +98,33 @@ function fillAllSelect(select1, select3, select5) {
         select5.appendChild(li);
     }
 }
-
-
-//Events(DO REFACTORING)
-select1.onclick = function (event) {
-    let target = event.target;
-    if (target.name != undefined) {
-        a[0].innerText = target.name;
-        a[0].style.color = "#d14b58"
-        p[0].style.opacity = "1";
-        //  target.style.color = "#d14b58";
+function drawBannerByArray(conteiner, array, pos) {
+    let img = array[pos].thumbnail,
+        name = array[pos].title,
+        price = array[pos].discountedPrice,
+        oldPrice = array[pos].price,
+        isNew = array[pos].hasNew;
+    createDiv(conteiner, img, name, price, oldPrice, isNew, "best_offer_price");
+}
+function fillNewArray() {
+    for (const e of catalog) {
+        for (let i = 0; i < bestOffer.left.length; i++) {
+            if (e.id == bestOffer.left[i]) {
+                firstBannerArray.push(e);
+            }
+        }
+        for (let i = 0; i < bestOffer.right.length; i++) {
+            if (e.id == bestOffer.right[i]) {
+                secondBannerArray.push(e);
+            }
+        }
     }
 }
-select2.onclick = function (event) {
-    let target = event.target;
-    if (target.name != undefined) {
-
-        a[1].innerText = target.name;
-        a[1].style.color = "#d14b58"
-        p[1].style.opacity = "1";
-        // target.style.color = "#d14b58";
-    }
+function calcPriceWithDiscount(queryselector) {
+    queryselector.forEach(e => {
+        console.log(e.textContent)
+    })
 }
-select3.onclick = function (event) {
-    let target = event.target;
-    if (target.name != undefined) {
-        a[2].innerText = target.name;
-        a[2].style.color = "#d14b58"
-        p[2].style.opacity = "1";
-        //  target.style.color = "#d14b58";
-    }
+function getPriceForIndex(arr, pos) {
+    return arr[pos].discountedPrice;
 }
-select4.onclick = function (event) {
-    let target = event.target;
-    if (target.name != undefined) {
-        a[3].innerText = target.name;
-        a[3].style.color = "#d14b58"
-        p[3].style.opacity = "1";
-        //target.style.color = "#d14b58";
-    }
-}
-select5.onclick = function (event) {
-    let target = event.target;
-    if (target.name != undefined) {
-        a[4].innerText = target.name;
-        a[4].style.color = "#d14b58"
-        p[4].style.opacity = "1";
-        //  target.style.color = "#d14b58";
-    }
-}
-select6.onclick = function (event) {
-    let target = event.target;
-    if (target.name != undefined) {
-        a[5].innerText = target.name;
-        a[5].style.color = "#d14b58"
-        p[5].style.opacity = "1";
-        // target.style.color = "#d14b58";
-    }
-}
-
-fillAllSelect(select1, select3, select5);
-drawBanners(conteiner1, 0, 4)
-drawBanners(conteiner2, 4, 12)

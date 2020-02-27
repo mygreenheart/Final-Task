@@ -79,34 +79,16 @@
                 <p>This offer is valid in-store and online. Prices displayed reflect this additional discount. This
                     offer ends at 11:59 GMT on March 1st 2019</p>
             </div>
-            <div class="banner_conteiner">
-                <a href="page_details.html">
-
-                    <div class="banner first_banner">
-                        <img src="/img/arrow-up.png" alt="arrow-up" srcset="" class="arrow-up">
-                        <p class="view_item">View item</p>
-                        <img src="/img/best_offer1.png" alt="best offer">
-                        <h3>Only Skinny Jeans</h3>
-                        <p class="price">£65.50</p>
-                        <img src="/img/arrow-down.png" alt="arrow-down" srcset="" class="arrow-down">
-                    </div>
-                </a>
+            <div class="banner_conteiner" >
+                <input type="button" value="Show next" id="btn_next">
+                <div id="first_banner"></div>
+                
                 <span class="plus">+</span>
-                <a href="page_details.html">
-                    <div class="banner second_banner">
-                        <img src="/img/arrow-up.png" alt="arrow-up" srcset="" class="arrow-up">
-                        <img src="/img/best_offer2.png" alt="best offer">
-                        <p class="view_item">View item</p>
-                        <h3>Levi’s Jeans for women</h3>
-                        <p class="price">£95.50</p>
-                        <img src="/img/arrow-down.png" alt="arrow-down" srcset="" class="arrow-down">
-                    </div>
-                </a>
+                <div id="second_banner"> </div>
                 <span class="plus">=</span>
                 <div class="third_banner">
-                    <div class="total_price">
-                        <span>£161.00</span>
-                        <h2>£146.00</h2>
+                    <div id="total_price">
+                        
                     </div>
                     <input type="button" value="Add to bag">
                 </div>
@@ -236,6 +218,11 @@
         </div>
 
     </footer>
+
+    <script src="/js/catalog.js"></script>
+    <script src="/js/best-offer.js"></script>
+    <script src="/js/function.js"></script>
+    <script src="/js/startHTML.js"></script>
 </body>
 
 </html>
