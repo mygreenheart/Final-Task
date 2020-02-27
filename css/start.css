@@ -53,6 +53,7 @@
   font-style: italic;
 }
 .plus {
+  margin-top: -200px;
   font-size: 34px;
 }
 .best_offer .banner_conteiner {
@@ -91,13 +92,14 @@
 .banner_conteiner p {
   font-weight: normal;
 }
-.banner {
-  position: relative;
+.third_banner {
+  margin-bottom: 90px;
 }
 .third_banner .total_price {
   margin-left: 15px;
 }
 .third_banner h2 {
+  margin-bottom: 75px;
   font-family: "Roboto";
   font-weight: bold;
   font-size: 32px;

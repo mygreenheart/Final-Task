@@ -151,5 +151,5 @@ function countOldPrice(string1, string2) {
     return +string1 + string2;
 }
 function countPriceDiscount(string1, string2) {
-    return (string1 + string2) - ((string1 + string2) / 100 * bestOffer.discount);
+    return ((string1 + string2) - ((string1 + string2) / 100 * bestOffer.discount)).toFixed(1);
 }
