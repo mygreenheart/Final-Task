@@ -1,18 +1,23 @@
-
 /* BANNERS */
 .section_banners {
+  width: 1300px;
+  margin: auto;
   height: 385px;
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
 }
-.banner_conteiner {
+.section_banners .conteiner {
+  width: 1180px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: space-between;
 }
 .section_banners .banner {
   position: relative;
+  width: 592px;
 }
+
 .section_banners .banner .text {
   position: absolute;
   top: 65px;
@@ -20,7 +25,7 @@
   text-align: center;
 }
 .girl {
-  border-left: 1px solid #e5e5e5;
+  height: 385px;
 }
 .girl h2 {
   margin-bottom: -3px;
@@ -29,9 +34,6 @@
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
   color: #757575;
-}
-.nike .text {
-  right: 100px;
 }
 
 /* BEST OFFER */
@@ -55,33 +57,42 @@
 }
 .best_offer .banner_conteiner {
   margin-top: 115px;
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
+}
+.best_offer .next_a {
+  cursor: pointer;
+  position: absolute;
+}
+.best_offer .next_a:hover {
+  transform: scale(1.4);
+}
+#first_next_up {
+  top: -50px;
+  left: 105px;
+}
+#second_next_up {
+  top: -50px;
+  left: 530px;
+}
+#first_next_down {
+  bottom: 30px;
+  left: 105px;
+}
+#second_next_down {
+  bottom: 30px;
+  left: 530px;
 }
 .banner_conteiner p {
   font-weight: normal;
 }
 .banner {
   position: relative;
-}
-.first_banner:before {
-  content: url(/img/new.png);
-  position: absolute;
-  top: 20px;
-}
-.banner_conteiner .banner .arrow-up {
-  position: absolute;
-  top: -40px;
-  left: 100px;
-}
-.banner_conteiner .banner .arrow-down {
-  position: absolute;
-  bottom: -40px;
-  left: 100px;
 }
 .third_banner .total_price {
   margin-left: 15px;
@@ -108,12 +119,11 @@
   transform: rotate(-7deg);
 }
 
-
 /* NEW ARRIVALS */
 .new_arivals {
   border-top: 1px solid #e5e5e5;
   margin: auto auto;
-  margin-top: 200px;
+  margin-top: 75px;
 }
 .new_arivals .banner_conteiner {
   margin-top: 115px;

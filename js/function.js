@@ -1,6 +1,7 @@
 "use strict"
 let bestOffer = window.bestOffer,
-    catalog = window.catalog;
+    catalog = window.catalog,
+    count = 0;
 
 function createDiv(conteiner, img, name, price, oldPrice, isNew, id) {
     let divBanner = document.createElement("div"),
@@ -127,4 +128,28 @@ function calcPriceWithDiscount(queryselector) {
 }
 function getPriceForIndex(arr, pos) {
     return arr[pos].discountedPrice;
+}
+function nextUp(baner, array) {
+    baner.innerHTML = "";
+    if (count == array.length - 1) {
+        count = -1;
+    }
+    count++;
+    drawBannerByArray(baner, array, count)
+    priceFromFirstBanner = getPriceForIndex(array, count);
+}
+function nextDown(baner, array) {
+    baner.innerHTML = "";
+    if (count == 0) {
+        count = array.length;
+    }
+    count--;
+    drawBannerByArray(baner, array, count)
+    priceFromFirstBanner = getPriceForIndex(array, count);
+}
+function countOldPrice(string1, string2) {
+    return +string1 + string2;
+}
+function countPriceDiscount(string1, string2) {
+    return (string1 + string2) - ((string1 + string2) / 100 * bestOffer.discount);
 }

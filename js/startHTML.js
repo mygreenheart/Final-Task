@@ -3,30 +3,43 @@
 let firstBanner = document.getElementById("first_banner"),
     secondBanner = document.getElementById("second_banner"),
     bestOfferDiv = document.getElementById("best_offer"),
-    btnNext = document.getElementById("btn_next"),
+    firstNextUp = document.getElementById("first_next_up"),
+    firstNextDown = document.getElementById("first_next_down"),
+    secondNextUp = document.getElementById("second_next_up"),
+    secondNextDown = document.getElementById("second_next_down"),
+    spanOldPrice = document.getElementById("old_price"),
+    h3PriceDiscount = document.getElementById("price_with_discount"),
     firstBannerArray = [],
     secondBannerArray = [];
 fillNewArray();
+// DRAW first banners
+drawBannerByArray(firstBanner, firstBannerArray, 0)
+drawBannerByArray(secondBanner, secondBannerArray, 0)
+// GET its prices
+let priceFromFirstBanner = getPriceForIndex(firstBannerArray, 0),
+    priceFromSecondBanner = getPriceForIndex(secondBannerArray, 0);
+spanOldPrice.textContent = "£" + countOldPrice(priceFromFirstBanner, priceFromSecondBanner)
+h3PriceDiscount.textContent = "£" + countPriceDiscount(priceFromFirstBanner, priceFromSecondBanner);
+// EVENT btn NEXT
+firstNextUp.addEventListener("click", () => {
+    nextUp(firstBanner, firstBannerArray);
+    spanOldPrice.textContent = "£" + countOldPrice(priceFromFirstBanner, priceFromSecondBanner)
+    h3PriceDiscount.textContent = "£" + countPriceDiscount(priceFromFirstBanner, priceFromSecondBanner);
+})
 
-let count = 0,
-    priceFromFirstBanner = getPriceForIndex(firstBannerArray, count),
-    priceFromSecondBanner = getPriceForIndex(secondBannerArray, count);
+firstNextDown.addEventListener("click", () => {
+    nextDown(firstBanner, firstBannerArray);
+    spanOldPrice.textContent = "£" + countOldPrice(priceFromFirstBanner, priceFromSecondBanner)
+    h3PriceDiscount.textContent = "£" + countPriceDiscount(priceFromFirstBanner, priceFromSecondBanner);
+})
+secondNextUp.addEventListener("click", () => {
+    nextUp(secondBanner, secondBannerArray);
+    spanOldPrice.textContent = "£" + countOldPrice(priceFromFirstBanner, priceFromSecondBanner)
+    h3PriceDiscount.textContent = "£" + countPriceDiscount(priceFromFirstBanner, priceFromSecondBanner);
+})
 
-
-drawBannerByArray(firstBanner, firstBannerArray, count)
-drawBannerByArray(secondBanner, secondBannerArray, count)
-
-// let price = document.getElementsByClassName("best_offer_price")
-
-// console.log(price)
-
-btnNext.onclick = function () {
-    firstBanner.innerHTML = "";
-    if (count == firstBannerArray.length - 1) {
-        count = -1;
-    }
-    count++;
-    drawBannerByArray(firstBanner, firstBannerArray, count)
-    priceFromFirstBanner = getPriceForIndex(firstBannerArray, count);
-}
-
+secondNextDown.addEventListener("click", () => {
+    nextDown(secondBanner, secondBannerArray);
+    spanOldPrice.textContent = "£" + countOldPrice(priceFromFirstBanner, priceFromSecondBanner)
+    h3PriceDiscount.textContent = "£" + countPriceDiscount(priceFromFirstBanner, priceFromSecondBanner);
+})

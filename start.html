@@ -49,7 +49,6 @@
     <!-- FIRST BANNER -->
     <section class="section_banners">
         <div class="conteiner">
-            <div class="banner_conteiner">
                 <a href="page_details.html">
                     <div class="banner nike">
                         <div class="text">
@@ -68,7 +67,6 @@
                         <img src="/img/girl.png" alt="girl">
                     </div>
                 </a>
-            </div>
         </div>
     </section>
     <!-- BEST OFFER -->
@@ -79,16 +77,19 @@
                 <p>This offer is valid in-store and online. Prices displayed reflect this additional discount. This
                     offer ends at 11:59 GMT on March 1st 2019</p>
             </div>
-            <div class="banner_conteiner" >
-                <input type="button" value="Show next" id="btn_next">
+            <div class="banner_conteiner">
+                <a class="next_a" id="first_next_up"><img src="/img/arrow-up.png" alt="" srcset=""></a>
                 <div id="first_banner"></div>
-                
+                <a class="next_a" id="first_next_down"><img src="/img/arrow-down.png" alt="" srcset=""></a>
                 <span class="plus">+</span>
+                <a class="next_a" id="second_next_up"><img src="/img/arrow-up.png" alt="" srcset=""></a>
                 <div id="second_banner"> </div>
+                <a class="next_a" id="second_next_down"><img src="/img/arrow-down.png" alt="" srcset=""></a>
                 <span class="plus">=</span>
                 <div class="third_banner">
                     <div id="total_price">
-                        
+                        <span id="old_price"></span>
+                        <h2 id="price_with_discount"></h2>
                     </div>
                     <input type="button" value="Add to bag">
                 </div>
