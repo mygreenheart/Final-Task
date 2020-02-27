@@ -86,7 +86,6 @@ li {
 }
 
 /* NEW ARRIVALS */
-
 .new_arivals #conteiner_new_arrivals,
 #conteiner_show_more {
   width: 1180px;
@@ -97,9 +96,6 @@ li {
   justify-content: space-between;
   text-align: center;
 }
-
-
-
 .new_arivals #conteiner_new_arrivals,
 #conteiner_show_more {
   margin-top: 60px;

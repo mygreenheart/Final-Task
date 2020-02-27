@@ -102,7 +102,7 @@ input[type="button"]:hover {
   top: 20px;
   left: 0;
 }
-.banner h3{
+.banner h3 {
   height: 20px;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -229,4 +229,52 @@ input[type="button"]:hover {
 
 .footer_content nav a {
   margin-left: 30px;
+}
+/* IMGS */
+.imgs_conteiner .conteiner {
+  margin-left: 0px;
+  width: 1240px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+.imgs_conteiner,
+.new_arivals {
+  width: 1300px;
+  margin: auto;
+}
+.imgs_conteiner {
+  margin-top: 100px;
+  margin-bottom: -134px;
+}
+.imgs_conteiner .img {
+  text-align: center;
+  position: relative;
+}
+.imgs_conteiner .text {
+  width: 215px;
+  text-align: center;
+}
+
+.imgs_conteiner .text span {
+  color: #ffffff;
+  font-weight: 100;
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+}
+.imgs_conteiner .img .text {
+  position: absolute;
+  left: 56px;
+  bottom: 85px;
+}
+.imgs_conteiner .img .text p {
+  font-size: 28px;
+  color: #ffff;
+  margin-bottom: 0px;
+}
+.imgs_conteiner .first_img .text {
+  left: 350px;
+  bottom: 270px;
 }
