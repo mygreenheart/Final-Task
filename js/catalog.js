@@ -24,7 +24,7 @@ window.catalog = [{
     fashion: 'Casual style',
     colors: ['Black', 'White'],
     sizes: ['UK 18'],
-    thumbnail: './img/catalog/photo1.png', // replace with image extracted from item layout
+    thumbnail: '../img/catalog/photo1.png', // replace with image extracted from item layout
     preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
 }, {
     id: '0fdfa061-838d-42ab-ae06-99c66115f633',
@@ -94,8 +94,8 @@ window.catalog = [{
     fashion: 'Classical style',
     colors: ['Black', 'Blue'],
     sizes: ['UK 52', 'UK 54', 'UK 56'],
-    thumbnail: './img/catalog/photo12.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    thumbnail: './img/catalog/darkclassicfitsuit1.png', // replace with image extracted from item layout
+    preview: ["./img/preview/darkclassicfitsuit2.png", './img/preview/darkclassicfitsuit3.png', './img/preview/darkclassicfitsuit4.png'] // replace with paths to images extracted from item layout
 }, {
     id: '8b300772-eee3-4ff1-b091-e89f17e0e469',
     dateAdded: '2017-08-10T14:59:00.000Z',

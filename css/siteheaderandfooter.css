@@ -143,12 +143,23 @@ input[type="button"]:hover {
 .section_links .conteiner,
 .contact_conteiner,
 .links_conteiner {
+  width: 1180px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
-
+.section_links .customer_care {
+  width: 330px;
+}
+.anotation {
+  margin-bottom: 50px;
+}
+.questions,
+.anotation {
+  height: 150px;
+  margin-left: 45px;
+}
 .section_links h3 {
   line-height: 65px;
 }
@@ -175,7 +186,7 @@ input[type="button"]:hover {
   line-height: 40px;
   display: inline;
   font-weight: 300;
-  margin-left: -45px;
+  margin-left: -35px;
 }
 .contact_conteiner .questions,
 .order_by_phone {
@@ -183,25 +194,25 @@ input[type="button"]:hover {
 }
 .contact_conteiner .tweet {
   position: relative;
-  left: 30px;
+  left: 20px;
   font-weight: 300;
 }
 .order_by_phone p {
   font-family: "Roboto";
-  font-weight: 300;
+  font-weight: normal;
 }
 .contact_conteiner .tweet img {
   position: absolute;
   left: -20px;
 }
 .anotation {
-  margin-right: 150px;
   width: 308px;
 }
 .anotation .contact_logo img {
   margin-right: 15px;
 }
 .anotation p {
+  color: #757575;
   font-weight: 100;
   font-size: 16px;
   font-family: "Times New Roman", Times, serif;
@@ -256,7 +267,6 @@ input[type="button"]:hover {
   width: 215px;
   text-align: center;
 }
-
 .imgs_conteiner .text span {
   color: #ffffff;
   font-weight: 100;

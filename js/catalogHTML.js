@@ -11,6 +11,7 @@ let conteiner1 = document.getElementById("conteiner_new_arrivals"),
     p = document.getElementsByClassName("filter_p");
 
 
+console.log(linkName)
 //Events(DO REFACTORING)
 select1.onclick = function (event) {
     let target = event.target;
