@@ -3,12 +3,13 @@ let bestOffer = window.bestOffer,
     catalog = window.catalog,
     count = 0,
     linkName,
-    bagCount = document.getElementById("bag-count");
+    bagCount = document.getElementById("bag-count"),
+    bagPrice = document.getElementById("bag-price");
 
 
+displayBagVariable()
 
-
-// Sort by dateAdd
+// Sort by dateAdd 
 catalog.sort((a, b) => {
     if (a.dateAdded > b.dateAdded)
         return -1
@@ -16,7 +17,18 @@ catalog.sort((a, b) => {
         return 1
     return 0
 })
-bagCount.textContent = "(" + localStorage.length + ")";
+function displayBagVariable() {
+    let price;
+    let sum = 0;
+    for (const key in localStorage) {
+        if (localStorage.hasOwnProperty(key)) {
+            price = parseFloat(localStorage.getItem(key))
+            sum += price;
+        }
+    }
+    bagPrice.textContent = " £" + sum;
+    bagCount.textContent = "(" + localStorage.length + ")";
+}
 
 function createDiv(conteiner, img, name, price, oldPrice, isNew, id) {
     let divBanner = document.createElement("div"),
@@ -177,24 +189,22 @@ function createBagItem(conteiner, img, name, price, color, size, isNew) {
         aRemove = document.createElement("a");
 
 
-    divBagImages.className = "item__image";
-    divBagInfo.className = "item__info";
+    divBagImages.className = "bag__image";
+    divBagInfo.className = "bag__info";
     bannerConteiner.className = "bag_conteiner";
-    //Add NEW img
-    if (isNew == true) {
-        imgNew.src = "./img/new.png"
-        imgNew.className = "imgNew";
-        divBagImages.appendChild(imgNew)
-    }
+
+
+
     pPrice.className = "price";
     pSize.className = "size";
     pColor.className = "color";
     pQuantity.className = "quantity";
+    spanCount.className = "span_count";
 
     imgMain.src = img;
     imgMain.alt = "main image";
-    imgMain.width = "340";
-    imgMain.height = "265";
+    imgMain.width = "265";
+    imgMain.height = "350";
 
     h3Name.textContent = name;
     pPrice.textContent = "£" + price;
@@ -202,6 +212,7 @@ function createBagItem(conteiner, img, name, price, color, size, isNew) {
     pSize.textContent = "Size:" + size;
     pQuantity.textContent = "Quantity:"
     aMinus.textContent = "-";
+    spanCount.textContent = 1;
     aPlus.textContent = "+";
     aRemove.textContent = "Remove item";
 
@@ -210,7 +221,12 @@ function createBagItem(conteiner, img, name, price, color, size, isNew) {
     bannerConteiner.appendChild(aBannerConteiner);
     bannerConteiner.appendChild(divBagInfo);
     aBannerConteiner.appendChild(divBagImages);
-    divBagImages.appendChild(imgNew);
+    //Add NEW img
+    if (isNew == true) {
+        imgNew.src = "./img/new.png"
+        imgNew.className = "imgNew";
+        divBagImages.appendChild(imgNew)
+    }
     divBagImages.appendChild(imgMain);
 
     divBagInfo.appendChild(h3Name);
@@ -255,7 +271,7 @@ function drawBannerByNameForBag(conteiner, titleName, color, size) {
             let img = catalog[i].thumbnail,
                 name = catalog[i].title,
                 price = catalog[i].discountedPrice,
-                isNew = catalog[i].isNew;
+                isNew = catalog[i].hasNew;
             createBagItem(conteiner, img, name, price, color, size, isNew);
         }
     }
