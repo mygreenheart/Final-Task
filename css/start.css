@@ -127,7 +127,7 @@
   margin: auto auto;
   margin-top: 75px;
 }
-.new_arivals .banner_conteiner {
+.new_arivals #banner_conteiner {
   margin-top: 115px;
   display: flex;
   flex-direction: row;
@@ -141,9 +141,7 @@
   position: absolute;
   top: 20px;
 }
-.new_arivals .banner_conteiner {
-  margin-top: 95px;
-}
+
 .new_arivals .button_conteiner {
   margin: 75px 420px 0 420px;
 }

@@ -7,7 +7,7 @@
     <title>Template</title>
 
 
-    <link rel="stylesheet" href="./css/start.css">
+    <link rel="stylesheet" href="./css/shoping-bag.css">
     <link rel="stylesheet" href="./css/siteheaderandfooter.css">
 </head>
 
@@ -24,7 +24,7 @@
                 <div class="bag">
                     <div class="bag__signup"> <a class="header__singUp" href="#">E-mail sing up</a></div>
                     <div><img src="./img/ico_bag.png" alt="bag" class="logo"> <a href="shoping-bag.html">Bag<span
-                                id="bag-count"></span></a>
+                                id="bag-count"></span>)</a>
                     </div>
                 </div>
             </div>
@@ -47,67 +47,33 @@
             </div>
         </div>
     </header>
-    <!-- FIRST BANNER -->
-    <section class="section_banners">
+
+    <section class="shoping_bag_section">
         <div class="conteiner">
-            <a href="page_details.html">
-                <div class="banner nike">
-                    <div class="text">
-                        <h2>Nike Red</h2>
-                    </div>
-                    <p class="view_item">dodelt</p>
-                    <img src="./img/red-nike.png" alt="red nike">
+            <div id="bag">
+                <div class="bag__img"><img src="/img/new.png" alt="" class="imgNew"><img src="/img/best_offer1.png" alt="" srcset=""></div>
+                <div class="bag__info">
+                    <h3>Only skinny Jeans</h3>
+                    <p class="price">65.50</p>
+                    <p class="color">Color: red</p>
+                    <p class="size">UK 17</p>
+                    <p class="quantity">Quantity:<a href="#">-</a><span class="count">1</span><a href="#">+</a></p>
+                    <a href="">Remove item</a>
                 </div>
-            </a>
-            <a href="catalog.html">
-                <div class="banner girl">
-                    <div class="text">
-                        <h2>Caps & Hats</h2>
-                        <span>Sale -50%</span>
-                    </div>
-                    <img src="./img/girl.png" alt="girl">
-                </div>
-            </a>
-        </div>
-    </section>
-    <!-- BEST OFFER -->
-    <section class="best_offer">
-        <div class="conteiner">
-            <div class="title">
-                <h1>Best offer</h1>
-                <p>This offer is valid in-store and online. Prices displayed reflect this additional discount. This
-                    offer ends at 11:59 GMT on March 1st 2019</p>
             </div>
-            <div class="banner_conteiner">
-                <a class="next_a" id="first_next_up"><img src="./img/arrow-up.png" alt="" srcset=""></a>
-                <div id="first_banner"></div>
-                <a class="next_a" id="first_next_down"><img src="./img/arrow-down.png" alt="" srcset=""></a>
-                <span class="plus">+</span>
-                <a class="next_a" id="second_next_up"><img src="./img/arrow-up.png" alt="" srcset=""></a>
-                <div id="second_banner"> </div>
-                <a class="next_a" id="second_next_down"><img src="./img/arrow-down.png" alt="" srcset=""></a>
-                <span class="plus">=</span>
-                <div class="third_banner">
-                    <div id="total_price">
-                        <span id="old_price"></span>
-                        <h2 id="price_with_discount"></h2>
-                    </div>
-                    <input type="button" value="Add to bag" id="add_to_bag">
+            <div id="bag">
+                <div class="bag__img"><img src="/img/best_offer1.png" alt="" srcset=""></div>
+                <div class="bag__info">
+                    <h3>Only skinny Jeans</h3>
+                    <p class="price">65.50</p>
+                    <p class="color">Color: red</p>
+                    <p class="size">UK 17</p>
+                    <p class="quantity"><a href="#">-</a><span class="count">1</span><a href="#">+</a></p>
+                    <a href="" >Remove item</a>
                 </div>
             </div>
         </div>
     </section>
-
-
-    <section class="new_arivals">
-        <div class="conteiner">
-            <div id="banner_conteiner"> </div>
-            <div class="button_conteiner">
-                <input type="button" value="Show more">
-            </div>
-        </div>
-    </section>
-
     <!-- SECTION LINKS -->
     <section class="section_links">
         <div class="conteiner">
@@ -186,7 +152,7 @@
     <script src="/js/catalog.js"></script>
     <script src="/js/best-offer.js"></script>
     <script src="/js/function.js"></script>
-    <script src="/js/startHTML.js"></script>
+    <script src="/js/shopingBag.js"></script>
 </body>
 
 </html>

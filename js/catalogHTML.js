@@ -7,11 +7,12 @@ let conteiner1 = document.getElementById("conteiner_new_arrivals"),
     select4 = document.getElementById("brand"),
     select5 = document.getElementById("size"),
     select6 = document.getElementById("price_range"),
+    btnShowMore = document.querySelector(".button_conteiner input"),
     a = document.getElementsByClassName("filter_a"),
     p = document.getElementsByClassName("filter_p");
 
 
-console.log(linkName)
+
 //Events(DO REFACTORING)
 select1.onclick = function (event) {
     let target = event.target;
@@ -72,3 +73,11 @@ select6.onclick = function (event) {
 fillAllSelect(select1, select3, select5);
 drawBanners(conteiner1, 0, 4)
 drawBanners(conteiner2, 4, 12)
+
+btnShowMore.addEventListener("click", () => {
+    if (count == 0) {
+        count++;
+        drawBanners(conteiner2, 12, catalog.length)
+    }
+
+})

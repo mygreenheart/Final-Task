@@ -2,7 +2,21 @@
 let bestOffer = window.bestOffer,
     catalog = window.catalog,
     count = 0,
-    linkName;
+    linkName,
+    bagCount = document.getElementById("bag-count");
+  
+
+
+
+// Sort by dateAdd
+catalog.sort((a, b) => {
+    if (a.dateAdded > b.dateAdded)
+        return -1
+    if (a.dateAdded < b.dateAdded)
+        return 1
+    return 0
+})
+bagCount.textContent = "(" + localStorage.length + ")";
 
 function createDiv(conteiner, img, name, price, oldPrice, isNew, id) {
     let divBanner = document.createElement("div"),
@@ -60,6 +74,7 @@ function createItem(conteiner, img, preview, name, description, price, size, col
         pPrice = document.createElement("p"),
         spanSize = document.createElement("span"),
         spanColor = document.createElement("span"),
+
         btnAddToCart = document.createElement("input");
 
 
@@ -72,8 +87,11 @@ function createItem(conteiner, img, preview, name, description, price, size, col
 
     btnAddToCart.type = "button";
     btnAddToCart.value = "Add to bag";
+    btnAddToCart.id = "add_to_bag";
     mainImg.src = img;
     mainImg.alt = "main image";
+    mainImg.width = "590";
+    mainImg.height = "390";
 
     spanSize.textContent = "Size:"
     spanColor.textContent = "Color:"
@@ -93,16 +111,43 @@ function createItem(conteiner, img, preview, name, description, price, size, col
     divItemInfo.appendChild(divSizeColor2);
     divSizeColor1.appendChild(spanSize);
     divSizeColor2.appendChild(spanColor);
-    for (const e of size) {
-        let aSize = document.createElement("a");
-        aSize.textContent = e;
-        divSizeColor1.appendChild(aSize);
+    for (let i = 0; i < size.length; i++) {
+        let divRadio = document.createElement("div");
+        let radioSize = document.createElement("input");
+        let labelSize = document.createElement("label");
+        radioSize.id = "radio_size" + i;
+        radioSize.className = "radio_size";
+        radioSize.type = "radio";
+        radioSize.name = "size";
+
+        radioSize.value = size[i];
+        labelSize.htmlFor = 'radio_size' + i;
+        labelSize.textContent = size[i];
+
+        divRadio.appendChild(radioSize);
+        divRadio.appendChild(labelSize);
+        divSizeColor1.appendChild(divRadio);
+
     }
-    for (const e of color) {
-        let aSize = document.createElement("a");
-        aSize.textContent = e;
-        divSizeColor2.appendChild(aSize);
+    for (let i = 0; i < color.length; i++) {
+        let divRadio = document.createElement("div");
+        let radioColor = document.createElement("input");
+        let labelColor = document.createElement("label");
+        radioColor.id = "radio_color" + i;
+        radioColor.className = "radio_color";
+        radioColor.type = "radio";
+        radioColor.name = "color";
+
+        radioColor.value = color[i];
+        labelColor.htmlFor = 'radio_color' + i;
+        labelColor.textContent = color[i];
+
+        divRadio.appendChild(radioColor);
+        divRadio.appendChild(labelColor);
+
+        divSizeColor2.appendChild(divRadio);
     }
+
     divItemInfo.appendChild(btnAddToCart);
     for (const e of preview) {
         let divImg = document.createElement("div");
@@ -111,18 +156,78 @@ function createItem(conteiner, img, preview, name, description, price, size, col
         previewImg.alt = "preview image"
         divItemImages.appendChild(divImg)
         divImg.appendChild(previewImg);
+
     }
+
+
 }
 
+function createBagItem(conteiner, img, name, price, isNew) {
+    let divBagImages = document.createElement("div"),
+        divBagInfo = document.createElement("div"),
+        imgMain = document.createElement("img"),
+        imgNew = document.createElement("img"),
+        h3Name = document.createElement("h3"),
+        pPrice = document.createElement("p"),
+        pSize = document.createElement("p"),
+        pColor = document.createElement("p"),
+        pQuantity = document.createElement("p"),
+        aMinus = document.createElement("a"),
+        spanCount = document.createElement("span"),
+        aPlus = document.createElement("a"),
+        aRemove = document.createElement("a");
+
+
+    divBagImages.className = "item__image";
+    divBagInfo.className = "item__info";
+
+    imgNew.className = "imgNew";
+    img.src = "/img/new.png"
+    pPrice.className = "price";
+    pSize.className = "size";
+    pColor.className = "color";
+    pQuantity.className = "quantity";
+
+    mainImg.src = img;
+    mainImg.alt = "main image";
+    mainImg.width = "340";
+    mainImg.height = "265";
+
+    h3Name.textContent = name;
+    pPrice.textContent = "£" + price;
+    pColor.textContent = "Color:";
+    pSize.textContent = "Size:";
+    pQuantity.textContent = "Quantity:"
+    spanColor.textContent = "Color:"
+    aMinus.textContent = "-";
+    aPlus.textContent = "+";
+    aRemove.textContent = "Remove item";
+
+
+    conteiner.appendChild(divBagImages);
+    conteiner.appendChild(divBagInfo);
+    divBagImages.appendChild(imgNew);
+    divBagImages.appendChild(mainImg);
+
+    divBagInfo.appendChild(h3Name);
+    divBagInfo.appendChild(pPrice);
+    divBagInfo.appendChild(pColor);
+    divBagInfo.appendChild(pSize);
+    divBagInfo.appendChild(pColor);
+    divBagInfo.appendChild(pQuantity);
+    pQuantity.appendChild(aMinus);
+    pQuantity.appendChild(spanCount);
+    pQuantity.appendChild(aPlus);
+    divBagInfo.appendChild(aRemove);
+}
 function drawBanners(conteiner, from, to) {
+
     for (var i = from; i < to; i++) {
         let img = catalog[i].thumbnail,
             name = catalog[i].title,
             price = catalog[i].discountedPrice,
             oldPrice = catalog[i].price,
             isNew = catalog[i].hasNew;
-
-
         createDiv(conteiner, img, name, price, oldPrice, isNew);
     }
 }
@@ -201,11 +306,6 @@ function fillNewArray() {
         }
     }
 }
-function calcPriceWithDiscount(queryselector) {
-    queryselector.forEach(e => {
-        console.log(e.textContent)
-    })
-}
 function getPriceForIndex(arr, pos) {
     return arr[pos].discountedPrice;
 }
@@ -233,7 +333,6 @@ function countOldPrice(string1, string2) {
 function countPriceDiscount(string1, string2) {
     return ((string1 + string2) - ((string1 + string2) / 100 * bestOffer.discount)).toFixed(1);
 }
-
 document.body.onclick = function () {
     let target = event.target;
     let banner = target.parentElement;
@@ -241,12 +340,11 @@ document.body.onclick = function () {
         if (banner.childNodes[2].textContent != "") {
             linkName = banner.childNodes[2].textContent;
             sessionStorage.setItem("linkName", linkName)
-            return linkName
         } else {
             linkName = banner.childNodes[3].textContent;
             sessionStorage.setItem("linkName", linkName)
-            return linkName;
         }
     }
 
 }
+

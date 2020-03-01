@@ -3,14 +3,17 @@
 let firstBanner = document.getElementById("first_banner"),
     secondBanner = document.getElementById("second_banner"),
     bestOfferDiv = document.getElementById("best_offer"),
+    conteinerNewArivals = document.getElementById("banner_conteiner"),
     firstNextUp = document.getElementById("first_next_up"),
     firstNextDown = document.getElementById("first_next_down"),
     secondNextUp = document.getElementById("second_next_up"),
     secondNextDown = document.getElementById("second_next_down"),
     spanOldPrice = document.getElementById("old_price"),
     h3PriceDiscount = document.getElementById("price_with_discount"),
+    btnAddToCart = document.getElementById("add_to_bag"),
     firstBannerArray = [],
     secondBannerArray = [];
+
 fillNewArray();
 // DRAW first banners
 drawBannerByArray(firstBanner, firstBannerArray, 0)
@@ -43,3 +46,5 @@ secondNextDown.addEventListener("click", () => {
     spanOldPrice.textContent = "£" + countOldPrice(priceFromFirstBanner, priceFromSecondBanner)
     h3PriceDiscount.textContent = "£" + countPriceDiscount(priceFromFirstBanner, priceFromSecondBanner);
 })
+
+drawBanners(conteinerNewArivals, 0, 4)
