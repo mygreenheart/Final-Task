@@ -4,7 +4,7 @@ let bestOffer = window.bestOffer,
     count = 0,
     linkName,
     bagCount = document.getElementById("bag-count");
-  
+
 
 
 
@@ -74,7 +74,7 @@ function createItem(conteiner, img, preview, name, description, price, size, col
         pPrice = document.createElement("p"),
         spanSize = document.createElement("span"),
         spanColor = document.createElement("span"),
-
+        pError = document.createElement("p"),
         btnAddToCart = document.createElement("input");
 
 
@@ -84,6 +84,7 @@ function createItem(conteiner, img, preview, name, description, price, size, col
     divSizeColor2.className = "size_color"
     pDesriprion.className = "description";
     pPrice.className = "price";
+    pError.id = "error";
 
     btnAddToCart.type = "button";
     btnAddToCart.value = "Add to bag";
@@ -95,6 +96,8 @@ function createItem(conteiner, img, preview, name, description, price, size, col
 
     spanSize.textContent = "Size:"
     spanColor.textContent = "Color:"
+    pError.textContent = "You must choose size and color.";
+
 
     h3Name.textContent = name;
     pDesriprion.textContent = description;
@@ -111,6 +114,7 @@ function createItem(conteiner, img, preview, name, description, price, size, col
     divItemInfo.appendChild(divSizeColor2);
     divSizeColor1.appendChild(spanSize);
     divSizeColor2.appendChild(spanColor);
+    // Show size
     for (let i = 0; i < size.length; i++) {
         let divRadio = document.createElement("div");
         let radioSize = document.createElement("input");
@@ -119,16 +123,14 @@ function createItem(conteiner, img, preview, name, description, price, size, col
         radioSize.className = "radio_size";
         radioSize.type = "radio";
         radioSize.name = "size";
-
         radioSize.value = size[i];
         labelSize.htmlFor = 'radio_size' + i;
         labelSize.textContent = size[i];
-
         divRadio.appendChild(radioSize);
         divRadio.appendChild(labelSize);
         divSizeColor1.appendChild(divRadio);
-
     }
+    // Show color
     for (let i = 0; i < color.length; i++) {
         let divRadio = document.createElement("div");
         let radioColor = document.createElement("input");
@@ -137,17 +139,14 @@ function createItem(conteiner, img, preview, name, description, price, size, col
         radioColor.className = "radio_color";
         radioColor.type = "radio";
         radioColor.name = "color";
-
         radioColor.value = color[i];
         labelColor.htmlFor = 'radio_color' + i;
         labelColor.textContent = color[i];
-
         divRadio.appendChild(radioColor);
         divRadio.appendChild(labelColor);
-
         divSizeColor2.appendChild(divRadio);
     }
-
+    divItemInfo.appendChild(pError);
     divItemInfo.appendChild(btnAddToCart);
     for (const e of preview) {
         let divImg = document.createElement("div");
@@ -156,14 +155,14 @@ function createItem(conteiner, img, preview, name, description, price, size, col
         previewImg.alt = "preview image"
         divItemImages.appendChild(divImg)
         divImg.appendChild(previewImg);
-
     }
 
 
 }
-
-function createBagItem(conteiner, img, name, price, isNew) {
-    let divBagImages = document.createElement("div"),
+function createBagItem(conteiner, img, name, price, color, size, isNew) {
+    let aBannerConteiner = document.createElement("a"),
+        bannerConteiner = document.createElement("div"),
+        divBagImages = document.createElement("div"),
         divBagInfo = document.createElement("div"),
         imgMain = document.createElement("img"),
         imgNew = document.createElement("img"),
@@ -180,34 +179,39 @@ function createBagItem(conteiner, img, name, price, isNew) {
 
     divBagImages.className = "item__image";
     divBagInfo.className = "item__info";
-
-    imgNew.className = "imgNew";
-    img.src = "/img/new.png"
+    bannerConteiner.className = "bag_conteiner";
+    //Add NEW img
+    if (isNew == true) {
+        imgNew.src = "./img/new.png"
+        imgNew.className = "imgNew";
+        divBagImages.appendChild(imgNew)
+    }
     pPrice.className = "price";
     pSize.className = "size";
     pColor.className = "color";
     pQuantity.className = "quantity";
 
-    mainImg.src = img;
-    mainImg.alt = "main image";
-    mainImg.width = "340";
-    mainImg.height = "265";
+    imgMain.src = img;
+    imgMain.alt = "main image";
+    imgMain.width = "340";
+    imgMain.height = "265";
 
     h3Name.textContent = name;
     pPrice.textContent = "£" + price;
-    pColor.textContent = "Color:";
-    pSize.textContent = "Size:";
+    pColor.textContent = "Color:" + color;
+    pSize.textContent = "Size:" + size;
     pQuantity.textContent = "Quantity:"
-    spanColor.textContent = "Color:"
     aMinus.textContent = "-";
     aPlus.textContent = "+";
     aRemove.textContent = "Remove item";
 
 
-    conteiner.appendChild(divBagImages);
-    conteiner.appendChild(divBagInfo);
+    conteiner.appendChild(bannerConteiner);
+    bannerConteiner.appendChild(aBannerConteiner);
+    bannerConteiner.appendChild(divBagInfo);
+    aBannerConteiner.appendChild(divBagImages);
     divBagImages.appendChild(imgNew);
-    divBagImages.appendChild(mainImg);
+    divBagImages.appendChild(imgMain);
 
     divBagInfo.appendChild(h3Name);
     divBagInfo.appendChild(pPrice);
@@ -242,6 +246,17 @@ function drawBannerByName(conteiner, titleName) {
                 size = catalog[i].sizes,
                 color = catalog[i].colors;
             createItem(conteiner, img, preview, name, description, price, size, color);
+        }
+    }
+}
+function drawBannerByNameForBag(conteiner, titleName, color, size) {
+    for (var i = 0; i < catalog.length; i++) {
+        if (titleName == catalog[i].title) {
+            let img = catalog[i].thumbnail,
+                name = catalog[i].title,
+                price = catalog[i].discountedPrice,
+                isNew = catalog[i].isNew;
+            createBagItem(conteiner, img, name, price, color, size, isNew);
         }
     }
 }

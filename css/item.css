@@ -41,6 +41,11 @@
   font-weight: normal;
   font-size: 25px;
 }
+.item__info #error {
+  color: #d14b58;
+  transition: 0.5s;
+  opacity: 0;
+}
 .item__info .size_color {
   display: flex;
   flex-direction: row;
@@ -60,7 +65,7 @@
 label {
   cursor: pointer;
 }
-.item__info input[type="radio"]{
+.item__info input[type="radio"] {
   display: none;
 }
 label {
@@ -68,9 +73,8 @@ label {
 }
 .item__info input[type="radio"]:checked ~ label {
   color: #d14b58;
-  background-color: rgb(0, 0, 0,0.1);
+  background-color: rgb(0, 0, 0, 0.1);
 }
-
 .back_to_catalog a {
   font-size: 16px;
   line-height: 60px;

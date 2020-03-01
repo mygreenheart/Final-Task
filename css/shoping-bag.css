@@ -2,17 +2,22 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
 #bag {
   /* margin: 34px 0 0 60px; */
-  position: relative;
-  width: 590px;
-  height: 350px;
+
+  width: 1180px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
   font-family: "Roboto";
+}
+.bag_conteiner {
+  position: relative;
+  width: 590px;
+  display: flex;
+  justify-content: flex-start;
 }
 .bag__info h3 {
   font-size: 14px;
