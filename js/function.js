@@ -9,8 +9,8 @@ let bestOffer = window.bestOffer,
 
 
 
-function bestOfferNames(){
-    
+function bestOfferNames() {
+
 }
 // Sort by dateAdd 
 catalog.sort((a, b) => {
@@ -363,10 +363,10 @@ function nextDown(baner, array) {
     priceFromFirstBanner = getPriceForIndex(array, count);
 }
 function countOldPrice(string1, string2) {
-    return +string1 + string2;
+    return (+string1 + string2).toFixed(2);
 }
 function countPriceDiscount(string1, string2) {
-    return ((string1 + string2) - ((string1 + string2) / 100 * bestOffer.discount)).toFixed(1);
+    return ((string1 + string2) - ((string1 + string2) / 100 * bestOffer.discount)).toFixed(2);
 }
 
 document.body.onclick = function () {
