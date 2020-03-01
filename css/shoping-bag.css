@@ -62,10 +62,7 @@
   justify-content: space-between;
   align-items: baseline;
 }
-.bag_functions .conteiner div {
-  width: 200px;
-  height: 60px;
-}
+
 
 .empty_bag {
   font-family: "Roboto";
@@ -80,12 +77,13 @@
 .total_price_bag {
   position: relative;
 }
-.total_price_bag span {
+.total_price_bag #discount {
   right: 0px;
   font-family: "Roboto";
   font-weight: normal;
   font-size: 16px;
   position: absolute;
+  display: none;
 }
 .total_price_bag p {
   font-family: "Roboto";

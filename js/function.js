@@ -7,8 +7,11 @@ let bestOffer = window.bestOffer,
     bagPrice = document.getElementById("bag-price");
 
 
-displayBagVariable()
 
+
+function bestOfferNames(){
+    
+}
 // Sort by dateAdd 
 catalog.sort((a, b) => {
     if (a.dateAdded > b.dateAdded)
@@ -18,15 +21,16 @@ catalog.sort((a, b) => {
     return 0
 })
 function displayBagVariable() {
-    let price;
-    let sum = 0;
+    let price, count, totalPrice = 0;
+
     for (const key in localStorage) {
         if (localStorage.hasOwnProperty(key)) {
-            price = parseFloat(localStorage.getItem(key))
-            sum += price;
+            price = +localStorage.getItem(key).split(",")[0];
+            count = +localStorage.getItem(key).split(",")[1];
+            totalPrice += price * count;
         }
     }
-    bagPrice.textContent = " £" + sum;
+    bagPrice.textContent = " £" + totalPrice;
     bagCount.textContent = "(" + localStorage.length + ")";
 }
 
@@ -171,7 +175,7 @@ function createItem(conteiner, img, preview, name, description, price, size, col
 
 
 }
-function createBagItem(conteiner, img, name, price, color, size, isNew) {
+function createBagItem(conteiner, img, name, price, color, size, count, isNew) {
     let aBannerConteiner = document.createElement("a"),
         bannerConteiner = document.createElement("div"),
         divBagImages = document.createElement("div"),
@@ -212,7 +216,7 @@ function createBagItem(conteiner, img, name, price, color, size, isNew) {
     pSize.textContent = "Size:" + size;
     pQuantity.textContent = "Quantity:"
     aMinus.textContent = "-";
-    spanCount.textContent = 1;
+    spanCount.textContent = count;
     aPlus.textContent = "+";
     aRemove.textContent = "Remove item";
 
@@ -233,7 +237,7 @@ function createBagItem(conteiner, img, name, price, color, size, isNew) {
     divBagInfo.appendChild(pPrice);
     divBagInfo.appendChild(pColor);
     divBagInfo.appendChild(pSize);
-    divBagInfo.appendChild(pColor);
+
     divBagInfo.appendChild(pQuantity);
     pQuantity.appendChild(aMinus);
     pQuantity.appendChild(spanCount);
@@ -265,14 +269,14 @@ function drawBannerByName(conteiner, titleName) {
         }
     }
 }
-function drawBannerByNameForBag(conteiner, titleName, color, size) {
+function drawBannerByNameForBag(conteiner, titleName, color, size, count) {
     for (var i = 0; i < catalog.length; i++) {
         if (titleName == catalog[i].title) {
             let img = catalog[i].thumbnail,
                 name = catalog[i].title,
                 price = catalog[i].discountedPrice,
                 isNew = catalog[i].hasNew;
-            createBagItem(conteiner, img, name, price, color, size, isNew);
+            createBagItem(conteiner, img, name, price, color, size, count, isNew);
         }
     }
 }
@@ -364,6 +368,7 @@ function countOldPrice(string1, string2) {
 function countPriceDiscount(string1, string2) {
     return ((string1 + string2) - ((string1 + string2) / 100 * bestOffer.discount)).toFixed(1);
 }
+
 document.body.onclick = function () {
     let target = event.target;
     let banner = target.parentElement;
@@ -379,3 +384,4 @@ document.body.onclick = function () {
 
 }
 
+displayBagVariable()

@@ -12,7 +12,7 @@ let title = itemConteiner.childNodes[2].firstChild.textContent,
     price = +pPrice[0].textContent.substr(1, pPrice[0].textContent.length),
     error = document.getElementById("error"),
     btnAddToCart = document.getElementById("add_to_bag");
-    
+
 function getCheckedColor() {
     for (let i = 0; i < radioColor.length; i++) {
         if (radioColor[i].checked == true) {
@@ -32,8 +32,9 @@ function getCheckedSize() {
 btnAddToCart.onclick = function () {
     if (getCheckedSize() != undefined && getCheckedColor() != undefined) {
         error.style.opacity = 0;
-        localStorage.setItem(title + ", " + getCheckedColor() + ", " + getCheckedSize(), price)
-       displayBagVariable()
+        count = 1;
+        localStorage.setItem(title + ", " + getCheckedColor() + ", " + getCheckedSize(), price + ", " + count)
+        displayBagVariable()
     } else {
         error.style.opacity = 1;
         throw "You must choose size and color."

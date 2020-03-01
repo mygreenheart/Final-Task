@@ -23,6 +23,7 @@ let priceFromFirstBanner = getPriceForIndex(firstBannerArray, 0),
     priceFromSecondBanner = getPriceForIndex(secondBannerArray, 0);
 spanOldPrice.textContent = "£" + countOldPrice(priceFromFirstBanner, priceFromSecondBanner)
 h3PriceDiscount.textContent = "£" + countPriceDiscount(priceFromFirstBanner, priceFromSecondBanner);
+
 // EVENT btn NEXT
 firstNextUp.addEventListener("click", () => {
     nextUp(firstBanner, firstBannerArray);
