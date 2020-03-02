@@ -3,8 +3,9 @@
 let firstBanner = document.getElementById("first_banner"),
     secondBanner = document.getElementById("second_banner"),
     bestOfferDiv = document.getElementById("best_offer"),
-    conteinerNewArivals = document.getElementById("banner_conteiner"),
+    containerNewArivals = document.getElementById("new_arrivals"),
     firstNextUp = document.getElementById("first_next_up"),
+    bannersDiv = document.getElementsByClassName("banner"),
     firstNextDown = document.getElementById("first_next_down"),
     secondNextUp = document.getElementById("second_next_up"),
     secondNextDown = document.getElementById("second_next_down"),
@@ -13,6 +14,8 @@ let firstBanner = document.getElementById("first_banner"),
     btnAddToCart = document.getElementById("add_to_bag"),
     firstBannerArray = [],
     secondBannerArray = [];
+isDiscount = "true";
+drawBanners(containerNewArivals, 0, 4);
 
 fillNewArray();
 // DRAW first banners
@@ -20,9 +23,13 @@ drawBannerByArray(firstBanner, firstBannerArray, 0)
 drawBannerByArray(secondBanner, secondBannerArray, 0)
 // GET its prices
 let priceFromFirstBanner = getPriceForIndex(firstBannerArray, 0),
-    priceFromSecondBanner = getPriceForIndex(secondBannerArray, 0);
+    priceFromSecondBanner = getPriceForIndex(secondBannerArray, 0),
+    nameFromFirstBanner = getNameForIndex(firstBannerArray, 0),
+    nameFromSecondBanner = getNameForIndex(secondBannerArray, 0);
 spanOldPrice.textContent = "£" + countOldPrice(priceFromFirstBanner, priceFromSecondBanner)
 h3PriceDiscount.textContent = "£" + countPriceDiscount(priceFromFirstBanner, priceFromSecondBanner);
+
+
 function countTotalPrice() {
     spanOldPrice.textContent = "£" + countOldPrice(priceFromFirstBanner, priceFromSecondBanner)
     h3PriceDiscount.textContent = "£" + countPriceDiscount(priceFromFirstBanner, priceFromSecondBanner);
@@ -46,5 +53,15 @@ secondNextDown.addEventListener("click", () => {
     nextDown(secondBanner, secondBannerArray);
     countTotalPrice()
 })
-
-drawBanners(conteinerNewArivals, 0, 4)
+btnAddToCart.onclick = function () {
+    let count = 1;
+    for (const e of catalog) {
+        if (e.title == nameFromFirstBanner) {
+            localStorage.setItem(e.title + ", " + e.colors[0] + "," + e.sizes[0], e.discountedPrice + "," + count + "," + true)
+        }
+        if (e.title == nameFromSecondBanner) {
+            localStorage.setItem(e.title + ", " + e.colors[0] + "," + e.sizes[0], e.discountedPrice + "," + count + "," + true)
+        }
+    }
+    displayBagVariable();
+}

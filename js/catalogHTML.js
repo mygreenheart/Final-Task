@@ -1,13 +1,13 @@
 "use strict"
-let conteiner1 = document.getElementById("conteiner_new_arrivals"),
-    conteiner2 = document.getElementById("conteiner_show_more"),
+let container1 = document.getElementById("container_new_arrivals"),
+    container2 = document.getElementById("container_show_more"),
     select1 = document.getElementById("fashion"),
     select2 = document.getElementById("product_type"),
     select3 = document.getElementById("color"),
     select4 = document.getElementById("brand"),
     select5 = document.getElementById("size"),
     select6 = document.getElementById("price_range"),
-    btnShowMore = document.querySelector(".button_conteiner input"),
+    btnShowMore = document.querySelector(".button_container input"),
     a = document.getElementsByClassName("filter_a"),
     p = document.getElementsByClassName("filter_p");
 
@@ -71,13 +71,13 @@ select6.onclick = function (event) {
 }
 
 fillAllSelect(select1, select3, select5);
-drawBanners(conteiner1, 0, 4)
-drawBanners(conteiner2, 4, 12)
+drawBanners(container1, 0, 4)
+drawBanners(container2, 4, 12)
 
 btnShowMore.addEventListener("click", () => {
     if (count == 0) {
         count++;
-        drawBanners(conteiner2, 12, catalog.length)
+        drawBanners(container2, 12, catalog.length)
     }
 
 })

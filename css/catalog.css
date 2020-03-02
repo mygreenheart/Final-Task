@@ -1,5 +1,5 @@
 /* FILTER */
-.filter .conteiner {
+.filter .container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -86,8 +86,8 @@ li {
 }
 
 /* NEW ARRIVALS */
-.new_arivals #conteiner_new_arrivals,
-#conteiner_show_more {
+.new_arivals #container_new_arrivals,
+#container_show_more {
   width: 1180px;
   margin: auto;
   display: flex;
@@ -96,8 +96,8 @@ li {
   justify-content: space-between;
   text-align: center;
 }
-.new_arivals #conteiner_new_arrivals,
-#conteiner_show_more {
+.new_arivals #container_new_arrivals,
+#container_show_more {
   margin-top: 60px;
 }
 
@@ -118,7 +118,7 @@ li {
 }
 /* BUTTON */
 
-.button_conteiner {
+.button_container {
   margin: -15px 420px 0 420px;
 }
 

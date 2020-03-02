@@ -5,13 +5,21 @@ let bestOffer = window.bestOffer,
     linkName,
     bagCount = document.getElementById("bag-count"),
     bagPrice = document.getElementById("bag-price");
+let isDiscount = (function () {
+    for (let key in localStorage) {
+        if (localStorage.hasOwnProperty(key)) {
+            if (localStorage.length == 0) {
+                return false;
+            } else {
+                return localStorage.getItem(key).split(",")[2];
+            }
+        }
+    }
+})()
 
 
 
 
-function bestOfferNames() {
-
-}
 // Sort by dateAdd 
 catalog.sort((a, b) => {
     if (a.dateAdded > b.dateAdded)
@@ -22,7 +30,6 @@ catalog.sort((a, b) => {
 })
 function displayBagVariable() {
     let price, count, totalPrice = 0;
-
     for (const key in localStorage) {
         if (localStorage.hasOwnProperty(key)) {
             price = +localStorage.getItem(key).split(",")[0];
@@ -30,11 +37,14 @@ function displayBagVariable() {
             totalPrice += price * count;
         }
     }
-    bagPrice.textContent = " £" + totalPrice;
+    if (isDiscount == "true") {
+        totalPrice -= bestOffer.discount;
+    }
+    bagPrice.textContent = " £" + totalPrice.toFixed(2);
     bagCount.textContent = "(" + localStorage.length + ")";
 }
 
-function createDiv(conteiner, img, name, price, oldPrice, isNew, id) {
+function createDiv(container, img, name, price, oldPrice, isNew, id) {
     let divBanner = document.createElement("div"),
         imgNew = document.createElement("img"),
         aBanner = document.createElement("a"),
@@ -46,9 +56,10 @@ function createDiv(conteiner, img, name, price, oldPrice, isNew, id) {
 
     divBanner.className = "banner";
     pViewItem.className = "view_item";
+    h3Name.className = id + "_name";
 
     pViewItem.textContent = "View Item";
-    pPrice.className = "price " + id;
+    pPrice.className = "price";
 
     aBanner.href = "page_details.html";
     imgBanner.width = "240"
@@ -65,7 +76,7 @@ function createDiv(conteiner, img, name, price, oldPrice, isNew, id) {
         divBanner.appendChild(imgNew)
     }
 
-    conteiner.appendChild(aBanner);
+    container.appendChild(aBanner);
     aBanner.appendChild(divBanner);
     divBanner.appendChild(pViewItem);
     divBanner.appendChild(imgBanner);
@@ -78,7 +89,7 @@ function createDiv(conteiner, img, name, price, oldPrice, isNew, id) {
     }
     divBanner.appendChild(pPrice);
 }
-function createItem(conteiner, img, preview, name, description, price, size, color) {
+function createItem(container, img, preview, name, description, price, size, color) {
     let divItemImages = document.createElement("div"),
         divItemInfo = document.createElement("div"),
         divSizeColor1 = document.createElement("div"),
@@ -119,8 +130,8 @@ function createItem(conteiner, img, preview, name, description, price, size, col
     pDesriprion.textContent = description;
     pPrice.textContent = "£" + price;
 
-    conteiner.appendChild(divItemImages);
-    conteiner.appendChild(divItemInfo);
+    container.appendChild(divItemImages);
+    container.appendChild(divItemInfo);
     divItemImages.appendChild(mainImg);
 
     divItemInfo.appendChild(h3Name);
@@ -175,9 +186,9 @@ function createItem(conteiner, img, preview, name, description, price, size, col
 
 
 }
-function createBagItem(conteiner, img, name, price, color, size, count, isNew) {
-    let aBannerConteiner = document.createElement("a"),
-        bannerConteiner = document.createElement("div"),
+function createBagItem(container, img, name, price, color, size, count, isNew) {
+    let aBannercontainer = document.createElement("a"),
+        bannercontainer = document.createElement("div"),
         divBagImages = document.createElement("div"),
         divBagInfo = document.createElement("div"),
         imgMain = document.createElement("img"),
@@ -188,14 +199,16 @@ function createBagItem(conteiner, img, name, price, color, size, count, isNew) {
         pColor = document.createElement("p"),
         pQuantity = document.createElement("p"),
         aMinus = document.createElement("a"),
+        imgMinus = document.createElement("img"),
         spanCount = document.createElement("span"),
         aPlus = document.createElement("a"),
+        imgplus = document.createElement("img"),
         aRemove = document.createElement("a");
 
 
     divBagImages.className = "bag__image";
     divBagInfo.className = "bag__info";
-    bannerConteiner.className = "bag_conteiner";
+    bannercontainer.className = "bag_container";
 
 
 
@@ -204,6 +217,7 @@ function createBagItem(conteiner, img, name, price, color, size, count, isNew) {
     pColor.className = "color";
     pQuantity.className = "quantity";
     spanCount.className = "span_count";
+    aRemove.id = "remove_item"
 
     imgMain.src = img;
     imgMain.alt = "main image";
@@ -212,19 +226,19 @@ function createBagItem(conteiner, img, name, price, color, size, count, isNew) {
 
     h3Name.textContent = name;
     pPrice.textContent = "£" + price;
-    pColor.textContent = "Color:" + color;
-    pSize.textContent = "Size:" + size;
-    pQuantity.textContent = "Quantity:"
-    aMinus.textContent = "-";
+    pColor.textContent = "Color: " + color;
+    pSize.textContent = "Size: " + size;
+    pQuantity.textContent = "Quantity: "
+    aMinus.textContent = " – ";
     spanCount.textContent = count;
-    aPlus.textContent = "+";
+    aPlus.textContent = " + ";
     aRemove.textContent = "Remove item";
 
 
-    conteiner.appendChild(bannerConteiner);
-    bannerConteiner.appendChild(aBannerConteiner);
-    bannerConteiner.appendChild(divBagInfo);
-    aBannerConteiner.appendChild(divBagImages);
+    container.appendChild(bannercontainer);
+    bannercontainer.appendChild(aBannercontainer);
+    bannercontainer.appendChild(divBagInfo);
+    aBannercontainer.appendChild(divBagImages);
     //Add NEW img
     if (isNew == true) {
         imgNew.src = "./img/new.png"
@@ -244,7 +258,7 @@ function createBagItem(conteiner, img, name, price, color, size, count, isNew) {
     pQuantity.appendChild(aPlus);
     divBagInfo.appendChild(aRemove);
 }
-function drawBanners(conteiner, from, to) {
+function drawBanners(container, from, to) {
 
     for (var i = from; i < to; i++) {
         let img = catalog[i].thumbnail,
@@ -252,10 +266,10 @@ function drawBanners(conteiner, from, to) {
             price = catalog[i].discountedPrice,
             oldPrice = catalog[i].price,
             isNew = catalog[i].hasNew;
-        createDiv(conteiner, img, name, price, oldPrice, isNew);
+        createDiv(container, img, name, price, oldPrice, isNew);
     }
 }
-function drawBannerByName(conteiner, titleName) {
+function drawBannerByName(container, titleName) {
     for (var i = 0; i < catalog.length; i++) {
         if (titleName == catalog[i].title) {
             let preview = catalog[i].preview,
@@ -265,28 +279,28 @@ function drawBannerByName(conteiner, titleName) {
                 price = catalog[i].discountedPrice,
                 size = catalog[i].sizes,
                 color = catalog[i].colors;
-            createItem(conteiner, img, preview, name, description, price, size, color);
+            createItem(container, img, preview, name, description, price, size, color);
         }
     }
 }
-function drawBannerByNameForBag(conteiner, titleName, color, size, count) {
+function drawBannerByNameForBag(container, titleName, color, size, count) {
     for (var i = 0; i < catalog.length; i++) {
         if (titleName == catalog[i].title) {
             let img = catalog[i].thumbnail,
                 name = catalog[i].title,
                 price = catalog[i].discountedPrice,
                 isNew = catalog[i].hasNew;
-            createBagItem(conteiner, img, name, price, color, size, count, isNew);
+            createBagItem(container, img, name, price, color, size, count, isNew);
         }
     }
 }
-function drawBannerByArray(conteiner, array, pos) {
+function drawBannerByArray(container, array, pos) {
     let img = array[pos].thumbnail,
         name = array[pos].title,
         price = array[pos].discountedPrice,
         oldPrice = array[pos].price,
         isNew = array[pos].hasNew;
-    createDiv(conteiner, img, name, price, oldPrice, isNew, "best_offer_price");
+    createDiv(container, img, name, price, oldPrice, isNew, "best_offer_price");
 }
 function fillAllSelect(select1, select3, select5) {
     let fashion = new Set()
@@ -344,6 +358,9 @@ function fillNewArray() {
 function getPriceForIndex(arr, pos) {
     return arr[pos].discountedPrice;
 }
+function getNameForIndex(arr, pos) {
+    return arr[pos].title;
+}
 function nextUp(baner, array) {
     baner.innerHTML = "";
     if (count == array.length - 1) {
@@ -352,6 +369,9 @@ function nextUp(baner, array) {
     count++;
     drawBannerByArray(baner, array, count)
     priceFromFirstBanner = getPriceForIndex(array, count);
+    priceFromSecondBanner = getPriceForIndex(array, count);
+    nameFromFirstBanner = getNameForIndex(array, count);
+    nameFromSecondBanner = getNameForIndex(array, count);
 }
 function nextDown(baner, array) {
     baner.innerHTML = "";
@@ -361,12 +381,15 @@ function nextDown(baner, array) {
     count--;
     drawBannerByArray(baner, array, count)
     priceFromFirstBanner = getPriceForIndex(array, count);
+    priceFromSecondBanner = getPriceForIndex(array, count);
+    nameFromFirstBanner = getNameForIndex(array, count);
+    nameFromSecondBanner = getNameForIndex(array, count);
 }
 function countOldPrice(string1, string2) {
     return (+string1 + string2).toFixed(2);
 }
 function countPriceDiscount(string1, string2) {
-    return ((string1 + string2) - ((string1 + string2) / 100 * bestOffer.discount)).toFixed(2);
+    return ((string1 + string2) - bestOffer.discount).toFixed(2);
 }
 
 document.body.onclick = function () {

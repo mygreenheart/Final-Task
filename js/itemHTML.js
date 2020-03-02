@@ -1,4 +1,4 @@
-let itemConteiner = document.getElementById("item"),
+let itemcontainer = document.getElementById("item"),
     radioColor = document.getElementsByClassName("radio_color"),
     radioSize = document.getElementsByClassName("radio_size"),
     pPrice = document.getElementsByClassName("price"),
@@ -7,8 +7,8 @@ let itemConteiner = document.getElementById("item"),
 
 
 
-drawBannerByName(itemConteiner, sessionStorage.getItem("linkName"));
-let title = itemConteiner.childNodes[2].firstChild.textContent,
+drawBannerByName(itemcontainer, sessionStorage.getItem("linkName"));
+let title = itemcontainer.childNodes[2].firstChild.textContent,
     price = +pPrice[0].textContent.substr(1, pPrice[0].textContent.length),
     error = document.getElementById("error"),
     btnAddToCart = document.getElementById("add_to_bag");
@@ -33,7 +33,7 @@ btnAddToCart.onclick = function () {
     if (getCheckedSize() != undefined && getCheckedColor() != undefined) {
         error.style.opacity = 0;
         count = 1;
-        localStorage.setItem(title + ", " + getCheckedColor() + ", " + getCheckedSize(), price + ", " + count)
+        localStorage.setItem(title + ", " + getCheckedColor() + ", " + getCheckedSize(), price + ", " + count + ", " + false)
         displayBagVariable()
     } else {
         error.style.opacity = 1;

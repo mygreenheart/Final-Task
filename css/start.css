@@ -6,7 +6,7 @@
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
 }
-.section_banners .conteiner {
+.section_banners .container {
   width: 1180px;
   display: flex;
   flex-direction: row;
@@ -56,7 +56,7 @@
   margin-top: -200px;
   font-size: 34px;
 }
-.best_offer .banner_conteiner {
+.best_offer .banner_container {
   margin-top: 115px;
   position: relative;
   display: flex;
@@ -89,7 +89,7 @@
   bottom: 30px;
   left: 530px;
 }
-.banner_conteiner p {
+.banner_container p {
   font-weight: normal;
 }
 .third_banner {
@@ -124,10 +124,10 @@
 /* NEW ARRIVALS */
 .new_arivals {
   border-top: 1px solid #e5e5e5;
-  margin: auto auto;
+  margin: auto;
   margin-top: 75px;
 }
-.new_arivals #banner_conteiner {
+.new_arivals .container #new_arrivals {
   margin-top: 115px;
   display: flex;
   flex-direction: row;
@@ -136,12 +136,7 @@
   align-items: center;
   text-align: center;
 }
-.new_arivals .second_banner:before {
-  content: url(/img/New.png);
-  position: absolute;
-  top: 20px;
-}
 
-.new_arivals .button_conteiner {
+.new_arivals .button_container {
   margin: 75px 420px 0 420px;
 }
