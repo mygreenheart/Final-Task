@@ -1,0 +1,125 @@
+/* FILTER */
+.filter .conteiner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.topmenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #e5e5e5;
+}
+.filter_li {
+  border-left: 1px solid #e5e5e5;
+  width: 190px;
+  height: 65px;
+  text-align: left;
+}
+.filter_a {
+  position: absolute;
+  width: 130px;
+  top: 25px;
+  right: 80px;
+  bottom: 20px;
+  left: 20px;
+}
+.filter_li p {
+  font-size: 12px;
+  font-family: "Roboto";
+  margin-left: 20px;
+  opacity: 0;
+}
+.topmenu nav a {
+  display: block;
+  text-decoration: none;
+  outline: none;
+  transition: 0.4s ease-in-out;
+}
+.topmenu {
+  margin: auto auto;
+  backface-visibility: hidden;
+  background: rgba(255, 255, 255, 0.8);
+}
+.topmenu > li {
+  list-style: none;
+  display: inline-block;
+  position: relative;
+}
+.topmenu > li > a {
+  font-size: 16px;
+  font-weight: bold;
+}
+.topmenu .filter_li:hover {
+  cursor: pointer;
+}
+.topmenu .submenu {
+  border: 1px solid #e5e5e5;
+  position: absolute;
+  left: 0;
+  top: 65px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 5;
+  width: 150px;
+  transform: perspective(600px) rotateX(-90deg);
+  transform-origin: 0% 0%;
+  transition: 0.6s ease-in-out;
+  text-align: left;
+}
+.topmenu > li:hover .submenu {
+  visibility: visible;
+  background-color: #ffffff;
+  opacity: 1;
+  transform: perspective(600px) rotateX(0deg);
+}
+
+li {
+  list-style: none;
+}
+.submenu li a {
+  line-height: 30px;
+  font-size: 13px;
+}
+
+/* NEW ARRIVALS */
+.new_arivals #conteiner_new_arrivals,
+#conteiner_show_more {
+  width: 1180px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+}
+.new_arivals #conteiner_new_arrivals,
+#conteiner_show_more {
+  margin-top: 60px;
+}
+
+/* text midle */
+.mid_text {
+  margin-top: -25px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+.mid_text h1 {
+  font-size: 24px;
+  margin-bottom: -5px;
+}
+.mid_text p {
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+}
+/* BUTTON */
+
+.button_conteiner {
+  margin: -15px 420px 0 420px;
+}
+
+

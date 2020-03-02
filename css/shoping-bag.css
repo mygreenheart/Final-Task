@@ -1,0 +1,92 @@
+.shoping_bag_section .conteiner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#bag {
+  /* margin: 34px 0 0 60px; */
+  width: 1180px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: "Roboto";
+}
+.bag_conteiner {
+  margin: 30px 0;
+  position: relative;
+  width: 590px;
+  display: flex;
+  justify-content: flex-start;
+}
+.bag__info h3 {
+  font-size: 14px;
+  font-weight: bold;
+}
+.bag__info .price {
+  font-size: 17px;
+  font-weight: bold;
+}
+.bag__info .color,
+.size,
+.quantity {
+  line-height: 24px;
+  font-size: 12px;
+  font-weight: normal;
+}
+.bag__info a {
+  cursor: pointer;
+  font-family: "Open Sans";
+  font-weight: bold;
+  font-size: 13px;
+  color: #f14a58;
+}
+#sh_bag {
+  display: block;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+}
+.text_info {
+  margin: auto;
+  text-align: center;
+  height: 40px;
+  width: 1300px;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f7f7f7;
+}
+.bag_functions .conteiner {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+
+.empty_bag {
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 13px;
+}
+.checkout_bag {
+  font-family: "Open Sans";
+  font-weight: bold;
+  font-size: 24px;
+}
+.total_price_bag {
+  position: relative;
+}
+.total_price_bag #discount {
+  right: 0px;
+  font-family: "Roboto";
+  font-weight: normal;
+  font-size: 16px;
+  position: absolute;
+  display: none;
+}
+.total_price_bag p {
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 22px;
+}

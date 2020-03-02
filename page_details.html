@@ -7,7 +7,7 @@
     <title>Template</title>
 
 
-    <link rel="stylesheet" href="./css/start.css">
+    <link rel="stylesheet" href="./css/item.css">
     <link rel="stylesheet" href="./css/siteheaderandfooter.css">
 </head>
 
@@ -24,7 +24,7 @@
                 <div class="bag">
                     <div class="bag__signup"> <a class="header__singUp" href="#">E-mail sing up</a></div>
                     <div><img src="./img/ico_bag.png" alt="bag" class="logo"> <a href="shoping-bag.html">Bag<span
-                                id="bag-price"></span> <span id="bag-count"></span></a>
+                        id="bag-price"></span> <span id="bag-count"></span></a>
                     </div>
                 </div>
             </div>
@@ -47,67 +47,47 @@
             </div>
         </div>
     </header>
-    <!-- FIRST BANNER -->
-    <section class="section_banners">
-        <div class="conteiner">
-            <a href="page_details.html">
-                <div class="banner nike">
-                    <div class="text">
-                        <h2>Nike Red</h2>
-                    </div>
-                    <p class="view_item">dodelt</p>
-                    <img src="./img/red-nike.png" alt="red nike">
-                </div>
-            </a>
-            <a href="catalog.html">
-                <div class="banner girl">
-                    <div class="text">
-                        <h2>Caps & Hats</h2>
-                        <span>Sale -50%</span>
-                    </div>
-                    <img src="./img/girl.png" alt="girl">
-                </div>
-            </a>
-        </div>
-    </section>
-    <!-- BEST OFFER -->
-    <section class="best_offer">
-        <div class="conteiner">
-            <div class="title">
-                <h1>Best offer</h1>
-                <p>This offer is valid in-store and online. Prices displayed reflect this additional discount. This
-                    offer ends at 11:59 GMT on March 1st 2019</p>
-            </div>
-            <div class="banner_conteiner">
-                <a class="next_a" id="first_next_up"><img src="./img/arrow-up.png" alt="" srcset=""></a>
-                <div id="first_banner"></div>
-                <a class="next_a" id="first_next_down"><img src="./img/arrow-down.png" alt="" srcset=""></a>
-                <span class="plus">+</span>
-                <a class="next_a" id="second_next_up"><img src="./img/arrow-up.png" alt="" srcset=""></a>
-                <div id="second_banner"> </div>
-                <a class="next_a" id="second_next_down"><img src="./img/arrow-down.png" alt="" srcset=""></a>
-                <span class="plus">=</span>
-                <div class="third_banner">
-                    <div id="total_price">
-                        <span id="old_price"></span>
-                        <h2 id="price_with_discount"></h2>
-                    </div>
-                    <input type="button" value="Add to bag" id="add_to_bag">
-                </div>
-            </div>
+
+    <section class="back_to_catalog">
+        <div class="conteiner"><a href="catalog.html">
+                < Back to catalog</a>
         </div>
     </section>
 
-
-    <section class="new_arivals">
+    <section class="items">
         <div class="conteiner">
-            <div id="banner_conteiner"> </div>
-            <div class="button_conteiner">
-                <input type="button" value="Show more">
+            <div id="item">
+
+            </div>
+
+    </section>
+
+    <section class="imgs_conteiner">
+        <div class="conteiner">
+            <div class="img first_img">
+                <div class="text">
+                    <p>Adidas Blue</p><span>Fore men</span>
+                </div>
+
+                <img src="./img/addidas.png" alt="addidas">
+            </div>
+            <div class="img second_img">
+                <div class="text">
+                    <p>Repair Patches</p><span style="font-family:Roboto; font-size: 14px;font-weight: normal;
+                    ">£ 150.50</span>
+                </div>
+
+                <img src="./img/color_up.png" alt="color_up">
+            </div>
+            <div class="img third_img">
+                <div class="text">
+                    <p style="color: #d14b58;">Sale</p><span style="color: #757575;">-70%</span>
+                </div>
+
+                <img src="./img/bag.png" alt="bag">
             </div>
         </div>
     </section>
-
     <!-- SECTION LINKS -->
     <section class="section_links">
         <div class="conteiner">
@@ -186,7 +166,7 @@
     <script src="./js/catalog.js"></script>
     <script src="./js/best-offer.js"></script>
     <script src="./js/function.js"></script>
-    <script src="./js/startHTML.js"></script>
+    <script src="./js/itemHTML.js"></script>
 </body>
 
 </html>

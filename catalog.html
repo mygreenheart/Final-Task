@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template</title>
-
-
-    <link rel="stylesheet" href="./css/start.css">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="./css/catalog.css">
     <link rel="stylesheet" href="./css/siteheaderandfooter.css">
 </head>
 
@@ -23,8 +21,8 @@
                 </div>
                 <div class="bag">
                     <div class="bag__signup"> <a class="header__singUp" href="#">E-mail sing up</a></div>
-                    <div><img src="./img/ico_bag.png" alt="bag" class="logo"> <a href="shoping-bag.html">Bag<span
-                                id="bag-price"></span> <span id="bag-count"></span></a>
+                    <div><img src="./img/ico_bag.png" alt="bag" class="logo"> <a href="shoping-bag.html">Bag <span
+                        id="bag-price"></span> <span id="bag-count"></span></a>
                     </div>
                 </div>
             </div>
@@ -47,68 +45,118 @@
             </div>
         </div>
     </header>
-    <!-- FIRST BANNER -->
-    <section class="section_banners">
+    <!-- FILTER -->
+    <section class="filter">
         <div class="conteiner">
-            <a href="page_details.html">
-                <div class="banner nike">
-                    <div class="text">
-                        <h2>Nike Red</h2>
-                    </div>
-                    <p class="view_item">dodelt</p>
-                    <img src="./img/red-nike.png" alt="red nike">
-                </div>
-            </a>
-            <a href="catalog.html">
-                <div class="banner girl">
-                    <div class="text">
-                        <h2>Caps & Hats</h2>
-                        <span>Sale -50%</span>
-                    </div>
-                    <img src="./img/girl.png" alt="girl">
-                </div>
-            </a>
+            <nav class="filter_nav">
+                <ul class="topmenu">
+
+                    <li class="filter_li">
+                        <p class="filter_p">Fashion</p>
+                        <a href="#" class="filter_a">Fashion</a>
+                        <ul class="submenu" id="fashion">
+                            <li><a name="Not selected">Not selected</a></li>
+                        </ul>
+                    </li>
+                    <li class="filter_li">
+                        <p class="filter_p">Product type</p>
+                        <a href="#" class="filter_a">Product type</a>
+                        <ul class="submenu" id="product_type">
+                            <li><a name="Not selected">Not selected</a></li>
+                            <li><a name="T-shirt">T-shirt</a></li>
+                            <li><a name="Jeans">Jeans</a></li>
+                        </ul>
+                    </li>
+                    <li class="filter_li">
+                        <p class="filter_p">Color</p>
+                        <a href="#" class="filter_a">Color </a>
+                        <ul class="submenu" id="color">
+                            <li><a name="Not selected">Not selected</a></li>
+                        </ul>
+                    </li>
+                    <li class="filter_li">
+                        <p class="filter_p">Brand</p>
+                        <a href="#" class="filter_a">Brand</a>
+                        <ul class="submenu" id="brand">
+                            <li><a name="Not selected">Not selected</a></li>
+                            <li><a name="Levi's">Levi's</a></li>
+                        </ul>
+                    </li>
+                    <li class="filter_li">
+                        <p class="filter_p">Size</p>
+                        <a href="#" class="filter_a">Size</a>
+                        <ul class="submenu" id="size">
+                            <li><a name="Not selected">Not selected</a></li>
+                        </ul>
+                    </li>
+                    <li class="filter_li">
+                        <p class="filter_p">Price range</p>
+                        <a href="#" class="filter_a">Price range</a>
+                        <ul class="submenu" id="price_range">
+                            <li><a name="Not selected">Not selected</a></li>
+                            <li><a name="£0 - £50">£0 - £50</a></li>
+                            <li><a name="£50 - £100">£50 - £100</a></li>
+                            <li><a name="£100 - £150">£100 - £150</a></li>
+                            <li><a name="£150 - £200">£150 - £200</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
         </div>
     </section>
-    <!-- BEST OFFER -->
-    <section class="best_offer">
-        <div class="conteiner">
-            <div class="title">
-                <h1>Best offer</h1>
-                <p>This offer is valid in-store and online. Prices displayed reflect this additional discount. This
-                    offer ends at 11:59 GMT on March 1st 2019</p>
-            </div>
-            <div class="banner_conteiner">
-                <a class="next_a" id="first_next_up"><img src="./img/arrow-up.png" alt="" srcset=""></a>
-                <div id="first_banner"></div>
-                <a class="next_a" id="first_next_down"><img src="./img/arrow-down.png" alt="" srcset=""></a>
-                <span class="plus">+</span>
-                <a class="next_a" id="second_next_up"><img src="./img/arrow-up.png" alt="" srcset=""></a>
-                <div id="second_banner"> </div>
-                <a class="next_a" id="second_next_down"><img src="./img/arrow-down.png" alt="" srcset=""></a>
-                <span class="plus">=</span>
-                <div class="third_banner">
-                    <div id="total_price">
-                        <span id="old_price"></span>
-                        <h2 id="price_with_discount"></h2>
-                    </div>
-                    <input type="button" value="Add to bag" id="add_to_bag">
-                </div>
-            </div>
+    <!-- NEW ARRIVALS -->
+    <section class="new_arivals">
+        <div id="conteiner_new_arrivals">
+
         </div>
     </section>
 
-
+    <section class="mid_text">
+        <div class="conteiner">
+            <h1>Last weekend <span style="color:#d14b58 ;"> extra 50%</span> off on all reduced boots and shoulder bags
+            </h1>
+            <p>This offer is valid in-store and online. Prices displayed reflect this additional discount. This
+                offer ends at 11:59 GMT on March 1st 2019</p>
+        </div>
+    </section>
+    <!-- NEW ARIVALS -->
     <section class="new_arivals">
         <div class="conteiner">
-            <div id="banner_conteiner"> </div>
+            <div id="conteiner_show_more"> </div>
             <div class="button_conteiner">
                 <input type="button" value="Show more">
             </div>
         </div>
     </section>
+    <!-- IMGS -->
+    <section class="imgs_conteiner">
+        <div class="conteiner">
+            <div class="img first_img">
+                <div class="text">
+                    <p>Adidas Blue</p><span>Fore men</span>
+                </div>
 
-    <!-- SECTION LINKS -->
+                <img src="./img/addidas.png" alt="addidas">
+            </div>
+            <div class="img second_img">
+                <div class="text">
+                    <p>Repair Patches</p><span style="font-family:Roboto; font-size: 14px;font-weight: normal;
+                    ">£ 150.50</span>
+                </div>
+
+                <img src="./img/color_up.png" alt="color_up">
+            </div>
+            <div class="img third_img">
+                <div class="text">
+                    <p style="color: #d14b58;">Sale</p><span style="color: #757575;">-70%</span>
+                </div>
+
+                <img src="./img/bag.png" alt="bag">
+            </div>
+        </div>
+    </section>
+    <!-- LINKS -->
     <section class="section_links">
         <div class="conteiner">
             <div class="links_conteiner">
@@ -150,6 +198,7 @@
                     <h3>Order by phone</h3>
                     <p>8-800-409-47-12</p>
                 </div>
+
                 <div class="anotation">
                     <div class="">
                         <p>We have our own delivery service which operates in 23 major European cities. Delivery time -
@@ -182,11 +231,9 @@
         </div>
 
     </footer>
-
     <script src="./js/catalog.js"></script>
-    <script src="./js/best-offer.js"></script>
     <script src="./js/function.js"></script>
-    <script src="./js/startHTML.js"></script>
+    <script src="./js/catalogHTML.js"></script>
 </body>
 
 </html>

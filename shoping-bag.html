@@ -7,7 +7,7 @@
     <title>Template</title>
 
 
-    <link rel="stylesheet" href="./css/start.css">
+    <link rel="stylesheet" href="./css/shoping-bag.css">
     <link rel="stylesheet" href="./css/siteheaderandfooter.css">
 </head>
 
@@ -23,7 +23,7 @@
                 </div>
                 <div class="bag">
                     <div class="bag__signup"> <a class="header__singUp" href="#">E-mail sing up</a></div>
-                    <div><img src="./img/ico_bag.png" alt="bag" class="logo"> <a href="shoping-bag.html">Bag<span
+                    <div><img src="./img/ico_bag.png" alt="bag" class="logo"> <a href="shoping-bag.html">Bag <span
                                 id="bag-price"></span> <span id="bag-count"></span></a>
                     </div>
                 </div>
@@ -47,67 +47,29 @@
             </div>
         </div>
     </header>
-    <!-- FIRST BANNER -->
-    <section class="section_banners">
+
+    <section class="shoping_bag_section">
         <div class="conteiner">
-            <a href="page_details.html">
-                <div class="banner nike">
-                    <div class="text">
-                        <h2>Nike Red</h2>
-                    </div>
-                    <p class="view_item">dodelt</p>
-                    <img src="./img/red-nike.png" alt="red nike">
+            <div id="bag">
+                <div id="sh_bag">Your shopping bag is empty
                 </div>
-            </a>
-            <a href="catalog.html">
-                <div class="banner girl">
-                    <div class="text">
-                        <h2>Caps & Hats</h2>
-                        <span>Sale -50%</span>
-                    </div>
-                    <img src="./img/girl.png" alt="girl">
-                </div>
-            </a>
+            </div>
+
         </div>
     </section>
-    <!-- BEST OFFER -->
-    <section class="best_offer">
+    <section class="text_info">
+        <p>You've qualified for Free UK Next Day Delivery on your order. Don't forget to enter the code <span
+                style="color: #f14a58;">nextday</span> at checkout</p>
+    </section>
+    <section class="bag_functions">
         <div class="conteiner">
-            <div class="title">
-                <h1>Best offer</h1>
-                <p>This offer is valid in-store and online. Prices displayed reflect this additional discount. This
-                    offer ends at 11:59 GMT on March 1st 2019</p>
-            </div>
-            <div class="banner_conteiner">
-                <a class="next_a" id="first_next_up"><img src="./img/arrow-up.png" alt="" srcset=""></a>
-                <div id="first_banner"></div>
-                <a class="next_a" id="first_next_down"><img src="./img/arrow-down.png" alt="" srcset=""></a>
-                <span class="plus">+</span>
-                <a class="next_a" id="second_next_up"><img src="./img/arrow-up.png" alt="" srcset=""></a>
-                <div id="second_banner"> </div>
-                <a class="next_a" id="second_next_down"><img src="./img/arrow-down.png" alt="" srcset=""></a>
-                <span class="plus">=</span>
-                <div class="third_banner">
-                    <div id="total_price">
-                        <span id="old_price"></span>
-                        <h2 id="price_with_discount"></h2>
-                    </div>
-                    <input type="button" value="Add to bag" id="add_to_bag">
-                </div>
+            <div class="empty_bag"> <a href="" class="empty_bag">Empty bag</a></div>
+            <div class="chekout_bag"> <input type="button" value="Checkout"></div>
+            <div class="total_price_bag"> <span id="discount" style="color: #f14a58;">Applied discount: 0%</span>
+                <p id="total_price">Total price:</p>
             </div>
         </div>
     </section>
-
-
-    <section class="new_arivals">
-        <div class="conteiner">
-            <div id="banner_conteiner"> </div>
-            <div class="button_conteiner">
-                <input type="button" value="Show more">
-            </div>
-        </div>
-    </section>
-
     <!-- SECTION LINKS -->
     <section class="section_links">
         <div class="conteiner">
@@ -186,7 +148,7 @@
     <script src="./js/catalog.js"></script>
     <script src="./js/best-offer.js"></script>
     <script src="./js/function.js"></script>
-    <script src="./js/startHTML.js"></script>
+    <script src="./js/shopingBag.js"></script>
 </body>
 
 </html>

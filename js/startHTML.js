@@ -1,0 +1,50 @@
+"use strict"
+
+let firstBanner = document.getElementById("first_banner"),
+    secondBanner = document.getElementById("second_banner"),
+    bestOfferDiv = document.getElementById("best_offer"),
+    conteinerNewArivals = document.getElementById("banner_conteiner"),
+    firstNextUp = document.getElementById("first_next_up"),
+    firstNextDown = document.getElementById("first_next_down"),
+    secondNextUp = document.getElementById("second_next_up"),
+    secondNextDown = document.getElementById("second_next_down"),
+    spanOldPrice = document.getElementById("old_price"),
+    h3PriceDiscount = document.getElementById("price_with_discount"),
+    btnAddToCart = document.getElementById("add_to_bag"),
+    firstBannerArray = [],
+    secondBannerArray = [];
+
+fillNewArray();
+// DRAW first banners
+drawBannerByArray(firstBanner, firstBannerArray, 0)
+drawBannerByArray(secondBanner, secondBannerArray, 0)
+// GET its prices
+let priceFromFirstBanner = getPriceForIndex(firstBannerArray, 0),
+    priceFromSecondBanner = getPriceForIndex(secondBannerArray, 0);
+spanOldPrice.textContent = "£" + countOldPrice(priceFromFirstBanner, priceFromSecondBanner)
+h3PriceDiscount.textContent = "£" + countPriceDiscount(priceFromFirstBanner, priceFromSecondBanner);
+function countTotalPrice() {
+    spanOldPrice.textContent = "£" + countOldPrice(priceFromFirstBanner, priceFromSecondBanner)
+    h3PriceDiscount.textContent = "£" + countPriceDiscount(priceFromFirstBanner, priceFromSecondBanner);
+}
+// EVENT btn NEXT
+firstNextUp.addEventListener("click", () => {
+    nextUp(firstBanner, firstBannerArray);
+    countTotalPrice()
+})
+
+firstNextDown.addEventListener("click", () => {
+    nextDown(firstBanner, firstBannerArray);
+    countTotalPrice()
+})
+secondNextUp.addEventListener("click", () => {
+    nextUp(secondBanner, secondBannerArray);
+    countTotalPrice()
+})
+
+secondNextDown.addEventListener("click", () => {
+    nextDown(secondBanner, secondBannerArray);
+    countTotalPrice()
+})
+
+drawBanners(conteinerNewArivals, 0, 4)

@@ -1,69 +1,21 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  font-family: "Open Sans";
-  font-weight: bold;
-}
-
-a {
-  text-decoration: none;
-}
-.conteiner {
-  width: 1180px;
-  margin: auto;
-}
-
-.header__conteiner1 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header__conteiner1 .bag {
-  width: 205px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.bag a {
-  font-family: "Roboto";
-  font-size: 12px;
-  color: #000000;
-}
-.header__conteiner2 .nav_a {
-  color: #000000;
-  font-size: 13px;
-  margin-right: 60px;
-}
-.header__conteiner2 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-}
-.header__search .input {
-  height: 25px;
-  width: 120px;
-  border: none;
-  border-bottom: 2px solid #e5e5e5;
-  background: url(/img/ico.png) no-repeat scroll 12px 12px;
-  background-position: right;
-}
-/* first section */
+/* BANNERS */
 .section_banners {
-  margin-top: 20px;
+  width: 1300px;
+  margin: auto;
+  height: 385px;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+.section_banners .conteiner {
+  width: 1180px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: space-between;
 }
 .section_banners .banner {
   position: relative;
+  width: 592px;
 }
 
 .section_banners .banner .text {
@@ -72,7 +24,9 @@ a {
   right: 100px;
   text-align: center;
 }
-
+.girl {
+  height: 385px;
+}
 .girl h2 {
   margin-bottom: -3px;
 }
@@ -81,10 +35,8 @@ a {
   font-style: italic;
   color: #757575;
 }
-.nike .text {
-  right: 100px;
-}
-/* second section */
+
+/* BEST OFFER */
 .best_offer {
   margin-top: 100px;
 }
@@ -101,43 +53,53 @@ a {
   font-style: italic;
 }
 .plus {
+  margin-top: -200px;
   font-size: 34px;
 }
-.banner_conteiner {
+.best_offer .banner_conteiner {
   margin-top: 115px;
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
+}
+.best_offer .next_a {
+  cursor: pointer;
+  position: absolute;
+}
+.best_offer .next_a:hover {
+  transform: scale(1.4);
+}
+#first_next_up {
+  top: -50px;
+  left: 105px;
+}
+#second_next_up {
+  top: -50px;
+  left: 530px;
+}
+#first_next_down {
+  bottom: 30px;
+  left: 105px;
+}
+#second_next_down {
+  bottom: 30px;
+  left: 530px;
 }
 .banner_conteiner p {
   font-weight: normal;
 }
-.banner {
-  position: relative;
-}
-.first_banner:before {
-  content: url(/img/New.png);
-  position: absolute;
-  top: 20px;
-}
-
-.banner_conteiner .banner .arrow-up {
-  position: absolute;
-  top: -40px;
-  left: 100px;
-}
-.banner_conteiner .banner .arrow-down {
-  position: absolute;
-  bottom: -40px;
-  left: 100px;
+.third_banner {
+  margin-bottom: 90px;
 }
 .third_banner .total_price {
   margin-left: 15px;
 }
 .third_banner h2 {
+  margin-bottom: 75px;
   font-family: "Roboto";
   font-weight: bold;
   font-size: 32px;
@@ -158,34 +120,32 @@ a {
   height: 50%;
   transform: rotate(-7deg);
 }
-input[type="button"] {
-  margin-top: 30px;
-  height: 73px;
-  width: 340px;
-  border: 1px solid #e5e5e5;
-  text-align: center;
-  font-size: 24px;
-  font-family: "Open Sans";
-  font-weight: bold;
-}
 
-/* third section */
+/* NEW ARRIVALS */
 .new_arivals {
+  border-top: 1px solid #e5e5e5;
   margin: auto auto;
-  margin-top: 200px;
+  margin-top: 75px;
+}
+.new_arivals #banner_conteiner {
+  margin-top: 115px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 .new_arivals .second_banner:before {
   content: url(/img/New.png);
   position: absolute;
   top: 20px;
 }
-.new_arivals .banner_conteiner {
-  margin-top: 95px;
-}
+
 .new_arivals .button_conteiner {
   margin: 75px 420px 0 420px;
 }
-/* sections links */
+
 .section_links {
   margin-top: 100px;
   border: 2px solid #e5e5e5;
