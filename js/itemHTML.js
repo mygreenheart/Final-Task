@@ -33,8 +33,9 @@ btnAddToCart.onclick = function () {
     if (getCheckedSize() != undefined && getCheckedColor() != undefined) {
         error.style.opacity = 0;
         count = 1;
-        localStorage.setItem(title + ", " + getCheckedColor() + ", " + getCheckedSize(), price + ", " + count + ", " + false)
+        localStorage.setItem(title + ", " + getCheckedColor() + ", " + getCheckedSize(), price + ", " + count + "," + false)
         displayBagVariable()
+        location.href = "shoping-bag.html";
     } else {
         error.style.opacity = 1;
         throw "You must choose size and color."

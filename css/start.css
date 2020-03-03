@@ -2,30 +2,31 @@
 .section_banners {
   width: 1300px;
   margin: auto;
-  height: 385px;
+
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
 }
 .section_banners .container {
   width: 1180px;
+  height: 385px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
-.section_banners .banner {
+.section_banners .girl,.nike {
   position: relative;
   width: 592px;
 }
 
-.section_banners .banner .text {
+.section_banners div .text {
   position: absolute;
   top: 65px;
   right: 100px;
   text-align: center;
 }
 .girl {
-  height: 385px;
+  border-left: 1px solid #e5e5e5;
 }
 .girl h2 {
   margin-bottom: -3px;

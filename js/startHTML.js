@@ -15,7 +15,7 @@ let firstBanner = document.getElementById("first_banner"),
     firstBannerArray = [],
     secondBannerArray = [];
 isDiscount = "true";
-drawBanners(containerNewArivals, 0, 4);
+drawBanners(containerNewArivals,fillterArr, 0, 4);
 
 fillNewArray();
 // DRAW first banners
@@ -26,7 +26,6 @@ let priceFromFirstBanner = getPriceForIndex(firstBannerArray, 0),
     priceFromSecondBanner = getPriceForIndex(secondBannerArray, 0),
     nameFromFirstBanner = getNameForIndex(firstBannerArray, 0),
     nameFromSecondBanner = getNameForIndex(secondBannerArray, 0);
-    console.log(nameFromFirstBanner)
 spanOldPrice.textContent = "£" + countOldPrice(priceFromFirstBanner, priceFromSecondBanner)
 h3PriceDiscount.textContent = "£" + countPriceDiscount(priceFromFirstBanner, priceFromSecondBanner);
 
@@ -42,14 +41,13 @@ firstNextUp.addEventListener("click", () => {
 })
 
 firstNextDown.addEventListener("click", () => {
-    nextfirstDown(firstBanner, firstBannerArray);
+    nextFirstDown(firstBanner, firstBannerArray);
     countTotalPrice()
 })
 secondNextUp.addEventListener("click", () => {
     nextSecondUp(secondBanner, secondBannerArray);
     countTotalPrice()
 })
-
 secondNextDown.addEventListener("click", () => {
     nextSecondDown(secondBanner, secondBannerArray);
     countTotalPrice()
