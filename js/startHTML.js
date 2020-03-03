@@ -26,6 +26,7 @@ let priceFromFirstBanner = getPriceForIndex(firstBannerArray, 0),
     priceFromSecondBanner = getPriceForIndex(secondBannerArray, 0),
     nameFromFirstBanner = getNameForIndex(firstBannerArray, 0),
     nameFromSecondBanner = getNameForIndex(secondBannerArray, 0);
+    console.log(nameFromFirstBanner)
 spanOldPrice.textContent = "£" + countOldPrice(priceFromFirstBanner, priceFromSecondBanner)
 h3PriceDiscount.textContent = "£" + countPriceDiscount(priceFromFirstBanner, priceFromSecondBanner);
 
@@ -36,21 +37,21 @@ function countTotalPrice() {
 }
 // EVENT btn NEXT
 firstNextUp.addEventListener("click", () => {
-    nextUp(firstBanner, firstBannerArray);
+    nextFirstUp(firstBanner, firstBannerArray);
     countTotalPrice()
 })
 
 firstNextDown.addEventListener("click", () => {
-    nextDown(firstBanner, firstBannerArray);
+    nextfirstDown(firstBanner, firstBannerArray);
     countTotalPrice()
 })
 secondNextUp.addEventListener("click", () => {
-    nextUp(secondBanner, secondBannerArray);
+    nextSecondUp(secondBanner, secondBannerArray);
     countTotalPrice()
 })
 
 secondNextDown.addEventListener("click", () => {
-    nextDown(secondBanner, secondBannerArray);
+    nextSecondDown(secondBanner, secondBannerArray);
     countTotalPrice()
 })
 btnAddToCart.onclick = function () {
@@ -58,8 +59,7 @@ btnAddToCart.onclick = function () {
     for (const e of catalog) {
         if (e.title == nameFromFirstBanner) {
             localStorage.setItem(e.title + ", " + e.colors[0] + "," + e.sizes[0], e.discountedPrice + "," + count + "," + true)
-        }
-        if (e.title == nameFromSecondBanner) {
+        } else if (e.title == nameFromSecondBanner) {
             localStorage.setItem(e.title + ", " + e.colors[0] + "," + e.sizes[0], e.discountedPrice + "," + count + "," + true)
         }
     }

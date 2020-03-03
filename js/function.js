@@ -199,10 +199,8 @@ function createBagItem(container, img, name, price, color, size, count, isNew) {
         pColor = document.createElement("p"),
         pQuantity = document.createElement("p"),
         aMinus = document.createElement("a"),
-        imgMinus = document.createElement("img"),
         spanCount = document.createElement("span"),
         aPlus = document.createElement("a"),
-        imgplus = document.createElement("img"),
         aRemove = document.createElement("a");
 
 
@@ -259,7 +257,6 @@ function createBagItem(container, img, name, price, color, size, count, isNew) {
     divBagInfo.appendChild(aRemove);
 }
 function drawBanners(container, from, to) {
-
     for (var i = from; i < to; i++) {
         let img = catalog[i].thumbnail,
             name = catalog[i].title,
@@ -301,6 +298,16 @@ function drawBannerByArray(container, array, pos) {
         oldPrice = array[pos].price,
         isNew = array[pos].hasNew;
     createDiv(container, img, name, price, oldPrice, isNew, "best_offer_price");
+}
+function drawBannerByFilterArray(container, array, from, to) {
+    for (var i = from; i < to; i++) {
+        let img = array[i].thumbnail,
+            name = array[i].title,
+            price = array[i].discountedPrice,
+            oldPrice = array[i].price,
+            isNew = array[i].hasNew;
+        createDiv(container, img, name, price, oldPrice, isNew);
+    }
 }
 function fillAllSelect(select1, select3, select5) {
     let fashion = new Set()
@@ -361,7 +368,7 @@ function getPriceForIndex(arr, pos) {
 function getNameForIndex(arr, pos) {
     return arr[pos].title;
 }
-function nextUp(baner, array) {
+function nextFirstUp(baner, array) {
     baner.innerHTML = "";
     if (count == array.length - 1) {
         count = -1;
@@ -369,11 +376,9 @@ function nextUp(baner, array) {
     count++;
     drawBannerByArray(baner, array, count)
     priceFromFirstBanner = getPriceForIndex(array, count);
-    priceFromSecondBanner = getPriceForIndex(array, count);
     nameFromFirstBanner = getNameForIndex(array, count);
-    nameFromSecondBanner = getNameForIndex(array, count);
 }
-function nextDown(baner, array) {
+function nextFirstDown(baner, array) {
     baner.innerHTML = "";
     if (count == 0) {
         count = array.length;
@@ -381,10 +386,30 @@ function nextDown(baner, array) {
     count--;
     drawBannerByArray(baner, array, count)
     priceFromFirstBanner = getPriceForIndex(array, count);
-    priceFromSecondBanner = getPriceForIndex(array, count);
     nameFromFirstBanner = getNameForIndex(array, count);
+}
+function nextSecondUp(baner, array) {
+    baner.innerHTML = "";
+    if (count == array.length - 1) {
+        count = -1;
+    }
+    count++;
+    drawBannerByArray(baner, array, count)
+    priceFromSecondBanner = getPriceForIndex(array, count);
     nameFromSecondBanner = getNameForIndex(array, count);
 }
+function nextSecondDown(baner, array) {
+    baner.innerHTML = "";
+    if (count == 0) {
+        count = array.length;
+    }
+    count--;
+    drawBannerByArray(baner, array, count)
+    priceFromSecondBanner = getPriceForIndex(array, count);
+    nameFromSecondBanner = getNameForIndex(array, count);
+}
+
+
 function countOldPrice(string1, string2) {
     return (+string1 + string2).toFixed(2);
 }
