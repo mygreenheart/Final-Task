@@ -69,8 +69,6 @@ function createDiv(container, img, name, price, oldPrice, isNew, id) {
     pPrice.className = "price";
 
     aBanner.href = "page_details.html";
-    imgBanner.width = "240"
-    imgBanner.height = "340"
 
     imgBanner.src = img;
     imgBanner.alt = "cute girl"

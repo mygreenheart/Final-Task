@@ -17,11 +17,17 @@ let firstBanner = document.getElementById("first_banner"),
 isDiscount = "true";
 
 
+window.onresize = function () {
+    changeSize()
+}
+window.onload = function () {
+    changeSize();
+}
 
 drawBanners(containerNewArivals, fillterArr, 0, 4);
 
 
-window.onresize = function () {
+function changeSize() {
     if (screen.width > 375 && screen.width < 768) {
         containerNewArivals.innerHTML = ""
         drawBanners(containerNewArivals, fillterArr, 0, 2);
@@ -35,6 +41,7 @@ window.onresize = function () {
         drawBanners(containerNewArivals, fillterArr, 0, 4);
     }
 }
+
 
 fillNewArray();
 // DRAW first banners

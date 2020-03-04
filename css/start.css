@@ -143,6 +143,99 @@
   margin: 75px 420px 0 420px;
 }
 
-@media (min-width: 1024px){
-  
+@media screen and (max-width: 1024px) {
+  /* BANNERS */
+  .section_banners {
+    width: 768px;
+    margin: auto 0;
+  }
+  .section_banners .container {
+    width: 690px;
+    height: 228px;
+  }
+  .section_banners img {
+    height: 228px;
+    width: 345px;
+  }
+  .section_banners h2 {
+    font-size: 22px;
+  }
+  .section_banners .girl,
+  .nike {
+    width: 345px;
+  }
+  .section_banners div .text {
+    top: 10px;
+    right: 50px;
+  }
+  .text span {
+    font-size: 16px;
+  }
+
+  /* BEST OFFER */
+  .best_offer,
+  .new_arivals {
+    margin: auto;
+    width: 768px;
+    margin-top: 100px;
+  }
+  .title h1 {
+    font-size: 50px;
+    margin-bottom: -10px;
+  }
+  .old_price {
+    margin-bottom: 132px;
+  }
+  .best_offer .banner_container {
+    flex-wrap: wrap;
+  }
+  #first_banner,
+  #second_banner {
+    height: 400px;
+    margin-bottom: 100px;
+  }
+  #first_next_up {
+    top: -40px;
+    left: 80px;
+  }
+  #second_next_up {
+    top: -40px;
+    left: 370px;
+  }
+  #first_next_down {
+    bottom: 150px;
+    left: 80px;
+  }
+  #second_next_down {
+    bottom: 150px;
+    left: 370px;
+  }
+  .third_banner {
+    width: 150px;
+  }
+  .third_banner #total_price {
+    margin-left: 40px;
+    margin-top: -85px;
+  }
+  .third_banner h2 {
+    font-size: 30px;
+  }
+  .third_banner span {
+    right: 40px;
+    bottom: -15px;
+    font-size: 22px;
+  }
+  .button_container {
+    margin-left: 180px;
+  }
+  .new_arivals {
+    width: 768px;
+  }
+  .new_arivals .container #new_arrivals {
+    margin-top: 115px;
+  }
+  .new_arivals .button_container {
+    margin-top: 50px;
+    margin-left: 180px;
+  }
 }
