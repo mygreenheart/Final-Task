@@ -15,7 +15,26 @@ let firstBanner = document.getElementById("first_banner"),
     firstBannerArray = [],
     secondBannerArray = [];
 isDiscount = "true";
-drawBanners(containerNewArivals,fillterArr, 0, 4);
+
+
+
+drawBanners(containerNewArivals, fillterArr, 0, 4);
+
+
+window.onresize = function () {
+    if (screen.width > 375 && screen.width < 768) {
+        containerNewArivals.innerHTML = ""
+        drawBanners(containerNewArivals, fillterArr, 0, 2);
+    }
+    if (screen.width > 768 && screen.width < 1024) {
+        containerNewArivals.innerHTML = ""
+        drawBanners(containerNewArivals, fillterArr, 0, 3);
+    }
+    if (screen.width > 1024) {
+        containerNewArivals.innerHTML = ""
+        drawBanners(containerNewArivals, fillterArr, 0, 4);
+    }
+}
 
 fillNewArray();
 // DRAW first banners

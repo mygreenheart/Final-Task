@@ -1,10 +1,12 @@
 
 let containerBag = document.getElementById("bag"),
     pEmpty = document.getElementById("sh_bag"),
+    pThank= document.getElementById("sh_bag2"),
     pTotalPrice = document.getElementById("total_price"),
     spanDiscount = document.getElementById("discount"),
     bagInfo = document.getElementsByClassName("bag__info"),
     emptyBag = document.getElementById("empty_bag"),
+    checkout = document.getElementById("checkout"),
     title,
     size,
     color;
@@ -36,9 +38,7 @@ function isEmpty() {
     } else if (localStorage.length == 0) {
         pEmpty.style.display = "block"
     }
-
 }
-
 // Draw banners from local storage
 function drawBannersFromLocalStorage() {
     for (const key in localStorage) {
@@ -82,8 +82,16 @@ containerBag.onclick = function (event) {
     }
 
 }
-
-
+checkout.onclick = function(){
+    localStorage.clear();
+    containerBag.innerHTML = "";
+    displayBagVariable()
+    showTotalPrice()
+    if (localStorage.length == 0) {
+        pThank.style.display = "block"
+        spanDiscount.style.opacity = "0";
+    }
+}
 //Remove items
 window.onclick = function (event) {
     let target = event.target,
@@ -110,7 +118,6 @@ window.onclick = function (event) {
     }
 
 }
-
 emptyBag.onclick = function () {
     localStorage.clear();
     containerBag.innerHTML = "";
@@ -118,6 +125,7 @@ emptyBag.onclick = function () {
     showTotalPrice()
     if (localStorage.length == 0) {
         pEmpty.style.display = "block"
+        spanDiscount.style.opacity = "0";
     }
 }
 

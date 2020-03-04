@@ -43,6 +43,10 @@
   display: flex;
   justify-content: flex-start;
 }
+.bag__image img {
+  width: 240px;
+  height: 340px;
+}
 .bag__info {
   margin-left: 30px;
 }
@@ -73,11 +77,15 @@
   font-size: 20px;
   margin: 0 5px;
 }
-#sh_bag {
+#sh_bag,
+#sh_bag2 {
   display: block;
   text-align: center;
   font-size: 30px;
   line-height: 100px;
+}
+#sh_bag2{
+  display: none;
 }
 .text_info {
   margin: auto;
@@ -120,4 +128,23 @@
   font-family: "Roboto";
   font-weight: bold;
   font-size: 22px;
+}
+.edit_item {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  height: 340px;
+  width: 240px;
+  font-size: 22px;
+  line-height: 340px;
+  margin: auto auto;
+  text-align: center;
+  color: #d14b58;
+  background: rgba(0, 0, 0, 0.4);
+  transition: 0.5s ease;
+}
+.bag_container a:hover .edit_item {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
