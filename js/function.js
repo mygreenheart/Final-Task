@@ -124,8 +124,7 @@ function createItem(container, img, preview, name, description, price, size, col
     btnAddToCart.id = "add_to_bag";
     mainImg.src = preview[0];
     mainImg.alt = "main image";
-    mainImg.width = "590";
-    mainImg.height = "390";
+    mainImg.className = "main_image"
 
     spanSize.textContent = "Size:"
     spanColor.textContent = "Color:"
@@ -186,6 +185,7 @@ function createItem(container, img, preview, name, description, price, size, col
         let previewImg = document.createElement("img");
         previewImg.src = preview[i];
         previewImg.alt = "preview image"
+        previewImg.className = "preview_image"
         previewImg.width = "196"
         previewImg.height = "125"
         previewImg.onclick = function () {

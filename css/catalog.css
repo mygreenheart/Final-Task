@@ -152,7 +152,7 @@ li {
     cursor: pointer;
     transform: scale(1.5);
   }
- 
+
   .filter_nav {
     display: none;
   }
@@ -204,5 +204,89 @@ li {
   }
   .button_container {
     margin-left: 220px;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* FILTER */
+  .filter {
+    margin: auto;
+    width: 375px;
+  }
+  .filter .container {
+    margin: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: center;
+  }
+  .p_fillter span {
+    font-size: 12px;
+  }
+  .fillter_tablet_phone .p_fillter span {
+    font-size: 12px;
+  }
+  #a_close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    color: #f14a58;
+  }
+  #a_close:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+  }
+
+  .filter_nav {
+    display: none;
+  }
+  #open_div {
+    width: 375px;
+    height: 720px;
+  }
+  .open_div_inside {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .open_div_inside div {
+    width: 120px;
+    text-align: left;
+  }
+  .open_div_inside div ul a {
+    font-size: 12px;
+    list-style-type: disc;
+    color: #bfbfbf;
+  }
+
+  .open_div_inside div li:first-child a {
+    list-style-type: disc;
+    color: black;
+  }
+  .open_div_inside div li {
+    list-style-image: url(../img/Ellipse.png);
+    color: #bfbfbf;
+  }
+  .title_list {
+    margin-left: 20px;
+    margin-bottom: 0;
+  }
+  /* CONTAINER */
+  .new_arivals #container_new_arrivals,
+  #container_show_more {
+    width: 325px;
+  }
+  .mid_text h1 {
+    font-size: 18px;
+  }
+  .mid_text p {
+    font-size: 14px;
+  }
+  .button_container {
+    margin-left: 80px;
+  }
+  .new_arivals .button_container input{
+    width: 220px;
+    height: 60px;
   }
 }

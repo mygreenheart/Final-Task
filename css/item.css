@@ -136,3 +136,42 @@ label {
     width: 270px;
   }
 }
+@media screen and (max-width: 768px) {
+  .items {
+    height: 790px;
+    width: 335px;
+  }
+  #item {
+    width: 335px;
+  }
+  .item__info {
+    width: 335px;
+  }
+  .back_to_catalog .container{
+    margin: auto;
+   
+    width: 690px;
+  }
+  .back_to_catalog .container a{
+    float: left;
+  }
+  .item__info h3 {
+    order: -5;
+    font-size: 20px;
+  }
+  .item__info .description {
+    order: 0;
+    font-size: 14px;
+  }
+  .item__info .price {
+    order: -1;
+    font-size: 18px;
+  }
+  .item__info input[type="button"] {
+    font-size: 20px;
+    padding: 20px 80px;
+    margin-top: 10px;
+    margin-left: 55px;
+    width: 270px;
+  }
+}
