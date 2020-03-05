@@ -178,7 +178,7 @@
   .text span {
     font-size: 16px;
   }
-
+  
   /* BEST OFFER */
   .best_offer,
   .new_arivals {
@@ -186,11 +186,10 @@
     width: 768px;
     margin-top: 100px;
   }
-  .title h1 {
+.title h1 {
     font-size: 50px;
     margin-bottom: -10px;
   }
-
   .best_offer .banner_container {
     flex-wrap: wrap;
     align-items: center;
@@ -295,7 +294,7 @@
     margin-left: 50px;
     margin-top: 70px;
   }
-  .best_offer .title h1 {
+  .title h1 {
     font-size: 26px;
     margin-bottom: -10px;
   }
@@ -365,7 +364,7 @@
     margin-top: 150px;
    
   }
-  .new_arivals .title h2{
+  .new_arivals .title h1{
     font-size: 26px;
   }
   .new_arivals .container #new_arrivals {

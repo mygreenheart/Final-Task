@@ -241,7 +241,7 @@ li {
   }
   #open_div {
     width: 375px;
-    height: 720px;
+    height: 820px;
   }
   .open_div_inside {
     display: flex;
@@ -250,7 +250,7 @@ li {
     justify-content: space-between;
   }
   .open_div_inside div {
-    width: 120px;
+    width: 150px;
     text-align: left;
   }
   .open_div_inside div ul a {

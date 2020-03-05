@@ -11,7 +11,8 @@ let firstBanner = document.getElementById("first_banner"),
     secondNextDown = document.getElementById("second_next_down"),
     spanOldPrice = document.getElementById("old_price"),
     h3PriceDiscount = document.getElementById("price_with_discount"),
-    btnAddToCart = document.getElementById("add_to_bag"),
+    btnAddToCart1 = document.getElementById("add_to_bag1"),
+    btnAddToCart2 = document.getElementById("add_to_bag2"),
     firstBannerArray = [],
     secondBannerArray = [];
 isDiscount = "true";
@@ -78,7 +79,18 @@ secondNextDown.addEventListener("click", () => {
     nextSecondDown(secondBanner, secondBannerArray);
     countTotalPrice()
 })
-btnAddToCart.onclick = function () {
+btnAddToCart1.onclick = function () {
+    let count = 1;
+    for (const e of catalog) {
+        if (e.title == nameFromFirstBanner) {
+            localStorage.setItem(e.title + ", " + e.colors[0] + "," + e.sizes[0], e.discountedPrice + "," + count + "," + true)
+        } else if (e.title == nameFromSecondBanner) {
+            localStorage.setItem(e.title + ", " + e.colors[0] + "," + e.sizes[0], e.discountedPrice + "," + count + "," + true)
+        }
+    }
+    displayBagVariable();
+}
+btnAddToCart2.onclick = function () {
     let count = 1;
     for (const e of catalog) {
         if (e.title == nameFromFirstBanner) {

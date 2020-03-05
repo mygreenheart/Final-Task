@@ -6,7 +6,22 @@ let bestOffer = window.bestOffer,
     linkName,
     fillterArr,
     bagCount = document.getElementById("bag-count"),
-    bagPrice = document.getElementById("bag-price");
+    bagPrice = document.getElementById("bag-price"),
+    iconHumburger = document.getElementById("icon_hamburger"),
+    iconClose = document.getElementById("icon_close"),
+    menuShow = document.getElementById("menu_hamburger");
+
+iconHumburger.onclick = function () {
+    iconHumburger.style.display = "none";
+    iconClose.style.display = "block"
+    menuShow.style.display = "block";
+}
+iconClose.onclick = function () {
+    iconHumburger.style.display = "block";
+    iconClose.style.display = "none"
+    menuShow.style.display = "none";
+}
+
 let isDiscount = (function () {
     for (let key in localStorage) {
         if (localStorage.hasOwnProperty(key)) {

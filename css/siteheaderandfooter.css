@@ -94,6 +94,14 @@ input[type="button"]:hover {
   background: url("../img/ico.png") no-repeat scroll 12px 12px;
   background-position: right;
 }
+#icon_hamburger,#icon_close{
+  display: none;
+}
+.header__container2 {
+  display: block;
+  display: flex;
+  flex-direction: row;
+}
 /* BANER */
 .imgNew {
   content: url("../img/new.png");
@@ -296,7 +304,8 @@ header .mobile {
   bottom: 270px;
 }
 @media screen and (max-width: 1024px) {
-  body,header,
+  body,
+  header,
   .footer,
   .section_links {
     width: 768px;
@@ -305,7 +314,14 @@ header .mobile {
     width: 690px;
     margin: auto;
   }
-
+  #icon_hamburger,#icon_hamburger{
+    display: none;
+  }
+  .header__container2 {
+    display: block;
+    display: flex;
+    flex-direction: row;
+  }
   .header__container1 .bag {
     width: 200px;
   }
@@ -488,7 +504,8 @@ header .mobile {
 }
 
 @media screen and (max-width: 768px) {
-  body,header,
+  body,
+  header,
   .footer,
   .section_links {
     width: 375px;
@@ -506,6 +523,26 @@ header .mobile {
     width: 335px;
     margin: auto;
   }
+  /* hamburger menu */
+  header .container{
+    position: relative;
+  }
+  .header__container2 {
+    display: none;
+    width: 375px;
+    height: 600px;
+  }
+  .header__container2 #nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header__container2 #nav a {
+    font-size: 24px;
+    margin: 15px 0;
+    font-weight: bold;
+  }
+
   .header__container1 .bag {
     width: 200px;
   }
@@ -513,26 +550,29 @@ header .mobile {
     font-size: 26px;
     line-height: 65px;
   }
+  .bag__signup {
+    display: none;
+  }
   .header__container2 .nav_a {
     margin-right: 20px;
   }
-  .header__search .input {
-    z-index: 99999;
-    border: 2px solid rgb(240, 240, 240, 0.5);
-    background-color: #ffffff;
-    border-radius: 10px;
-    right: 70px;
-    top: 80px;
-    height: 25px;
-    width: 15px;
-    font-size: 0;
-  }
-  .header__search .input:hover {
+  #icon_hamburger {
+    display: block;
     position: absolute;
-    right: 155px;
-    height: 25px;
-    width: 250px;
-    font-size: 10px;
+    right: 20px;
+    top: 35px;
+  }
+  #icon_close {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 35px;
+  }
+  .header__container2 .input {
+    font-size: 12px;
+    margin-top: 10px;
+    height: 27px;
+    width: 170px;
   }
   /* BANNER */
   .banner {
@@ -705,7 +745,7 @@ header .mobile {
     margin-bottom: 125px;
     margin-left: -10px;
   }
-  .old_price{
+  .old_price {
     font-size: 12px;
   }
 }
