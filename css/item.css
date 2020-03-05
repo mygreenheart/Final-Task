@@ -108,6 +108,14 @@ label {
     height: 270px;
     align-items: center;
   }
+  .back_to_catalog .container{
+    margin: auto;
+   
+    width: 690px;
+  }
+  .back_to_catalog .container a{
+    float: left;
+  }
   .item__info h3 {
     order: -5;
     font-size: 20px;

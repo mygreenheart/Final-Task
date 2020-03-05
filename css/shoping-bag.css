@@ -172,7 +172,7 @@
     width: 140px;
     height: 200px;
   }
-  #bag{
+  #bag {
     width: 690px;
     display: flex;
     justify-content: space-between;
@@ -211,13 +211,16 @@
   .text_info p {
     font-size: 11px;
   }
-  .bag_functions{
-  margin-bottom: 100px;}
+  
+  .bag_functions {
+    margin-bottom: 100px;
+  }
   .bag_functions .container {
+    margin: auto;
     margin-top: 60px;
     margin-bottom: -30px;
   }
-  .bag_functions input[type="button"]{
+  .bag_functions input[type="button"] {
     width: 250px;
     height: 70px;
   }

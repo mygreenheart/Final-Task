@@ -125,6 +125,7 @@ li {
 @media screen and (max-width: 1024px) {
   /* FILTER */
   .filter {
+    margin: auto;
     width: 768px;
   }
   .filter .container {
@@ -151,6 +152,7 @@ li {
     cursor: pointer;
     transform: scale(1.5);
   }
+ 
   .filter_nav {
     display: none;
   }
