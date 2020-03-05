@@ -67,7 +67,7 @@ function createDiv(container, img, name, price, oldPrice, isNew, id) {
 
     pViewItem.textContent = "View Item";
     pPrice.className = "price";
-
+    imgBanner.className = "img_banner"
     aBanner.href = "page_details.html";
 
     imgBanner.src = img;
@@ -122,7 +122,7 @@ function createItem(container, img, preview, name, description, price, size, col
     btnAddToCart.type = "button";
     btnAddToCart.value = "Add to bag";
     btnAddToCart.id = "add_to_bag";
-    mainImg.src = img;
+    mainImg.src = preview[0];
     mainImg.alt = "main image";
     mainImg.width = "590";
     mainImg.height = "390";
@@ -186,6 +186,8 @@ function createItem(container, img, preview, name, description, price, size, col
         let previewImg = document.createElement("img");
         previewImg.src = e;
         previewImg.alt = "preview image"
+        previewImg.width = "196"
+        previewImg.height = "125"
         divItemImages.appendChild(divImg)
         divImg.appendChild(previewImg);
     }
@@ -423,8 +425,14 @@ function countPriceDiscount(string1, string2) {
 }
 document.body.onclick = function () {
     let target = event.target;
+    
     let banner = target.parentElement;
+    if (target.id == "a_close") {
+        banner.style.display = "none"
+    }
     let bag_container = banner.parentElement.parentElement.childNodes[1].childNodes[0].textContent;
+   
+
     if (banner.className == "banner") {
         if (banner.childNodes[2].textContent != "") {
             linkName = banner.childNodes[2].textContent;
