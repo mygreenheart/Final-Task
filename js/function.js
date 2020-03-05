@@ -91,7 +91,7 @@ function createDiv(container, img, name, price, oldPrice, isNew, id) {
     pPrice.textContent = "£" + price;
     //Add NEW img
     if (isNew == true) {
-        imgNew.src = "./img/new.png"
+        imgNew.src = "../img/new.png"
         imgNew.className = "imgNew";
         divBanner.appendChild(imgNew)
     }
