@@ -12,11 +12,12 @@
 <body>
     <!-- HEADER -->
     <header class="header">
-        <div class="conteiner">
-            <div class="header__conteiner1">
+        <div class="container">
+            <div class="header__container1">
                 <div class="h1">
                     <a href="start.html">
-                        <h1>Template</h1>
+                        <h1 class="desktop">Template</h1>
+                        <h1 class="mobile">TL</h1>
                     </a>
                 </div>
                 <div class="bag">
@@ -26,9 +27,11 @@
                     </div>
                 </div>
             </div>
-            <div class="header__conteiner2">
+            <a href="javascript:void(0);" id="icon_hamburger"><img src="./img/ico_menu.png" alt="hamburger_menu"></a>
+            <a href="javascript:void(0);" id="icon_close"><img src="./img/ico_close.png" alt="icon_close"></a>
+            <div class="header__container2" id="menu_hamburger">
                 <div class="header__nav">
-                    <nav class="nav">
+                    <nav id="nav">
                         <a href="" class="nav_a">Women</a>
                         <a href="" class="nav_a">Men</a>
                         <a href="" class="nav_a">Handbags</a>
@@ -47,10 +50,10 @@
     </header>
     <!-- FILTER -->
     <section class="filter">
-        <div class="conteiner">
+        <div class="container">
+            <div id="fillter_tablet_phone"></div>
             <nav class="filter_nav">
-                <ul class="topmenu">
-
+                <ul class="topmenu" id="topmenu">
                     <li class="filter_li">
                         <p class="filter_p">Fashion</p>
                         <a href="#" class="filter_a">Fashion</a>
@@ -107,13 +110,13 @@
     </section>
     <!-- NEW ARRIVALS -->
     <section class="new_arivals">
-        <div id="conteiner_new_arrivals">
+        <div id="container_new_arrivals">
 
         </div>
     </section>
 
     <section class="mid_text">
-        <div class="conteiner">
+        <div class="container">
             <h1>Last weekend <span style="color:#d14b58 ;"> extra 50%</span> off on all reduced boots and shoulder bags
             </h1>
             <p>This offer is valid in-store and online. Prices displayed reflect this additional discount. This
@@ -122,19 +125,19 @@
     </section>
     <!-- NEW ARIVALS -->
     <section class="new_arivals">
-        <div class="conteiner">
-            <div id="conteiner_show_more"> </div>
-            <div class="button_conteiner">
+        <div class="container">
+            <div id="container_show_more"> </div>
+            <div class="button_container">
                 <input type="button" value="Show more">
             </div>
         </div>
     </section>
     <!-- IMGS -->
-    <section class="imgs_conteiner">
-        <div class="conteiner">
+    <section class="imgs_container">
+        <div class="container">
             <div class="img first_img">
                 <div class="text">
-                    <p>Adidas Blue</p><span>Fore men</span>
+                    <p>Adidas Blue</p><span>For men</span>
                 </div>
 
                 <img src="./img/addidas.png" alt="addidas">
@@ -158,8 +161,8 @@
     </section>
     <!-- LINKS -->
     <section class="section_links">
-        <div class="conteiner">
-            <div class="links_conteiner">
+        <div class="container">
+            <div class="links_container">
                 <div class="nav quick_links">
                     <h3>Quick Links</h3>
                     <nav class="links">
@@ -186,7 +189,7 @@
                     </nav>
                 </div>
             </div>
-            <div class="contact_conteiner">
+            <div class="contact_container">
                 <div class="questions">
                     <h3>Questions</h3>
                     <div class="tweet"> <img src="./img/twi_ico.png" alt="twitter" srcset="">
@@ -217,7 +220,7 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="conteiner">
+        <div class="container">
             <div class="footer_content">
                 <p>© 2010–2015, The Template Group inc.</p>
                 <div class=""><a href="#">Share</a><img src="./img/share.png" alt="share"></div>
@@ -231,6 +234,7 @@
         </div>
 
     </footer>
+    <script src="./js/best-offer.js"></script>
     <script src="./js/catalog.js"></script>
     <script src="./js/function.js"></script>
     <script src="./js/catalogHTML.js"></script>

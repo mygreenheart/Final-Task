@@ -14,11 +14,12 @@
 <body>
     <!-- HEADER -->
     <header class="header">
-        <div class="conteiner">
-            <div class="header__conteiner1">
+        <div class="container">
+            <div class="header__container1">
                 <div class="h1">
                     <a href="start.html">
-                        <h1>Template</h1>
+                        <h1 class="desktop">Template</h1>
+                        <h1 class="mobile">TL</h1>
                     </a>
                 </div>
                 <div class="bag">
@@ -28,9 +29,11 @@
                     </div>
                 </div>
             </div>
-            <div class="header__conteiner2">
+            <a href="javascript:void(0);" id="icon_hamburger"><img src="./img/ico_menu.png" alt="hamburger_menu"></a>
+            <a href="javascript:void(0);" id="icon_close"><img src="./img/ico_close.png" alt="icon_close"></a>
+            <div class="header__container2" id="menu_hamburger">
                 <div class="header__nav">
-                    <nav class="nav">
+                    <nav id="nav">
                         <a href="" class="nav_a">Women</a>
                         <a href="" class="nav_a">Men</a>
                         <a href="" class="nav_a">Handbags</a>
@@ -49,18 +52,17 @@
     </header>
     <!-- FIRST BANNER -->
     <section class="section_banners">
-        <div class="conteiner">
-            <a href="page_details.html">
-                <div class="banner nike">
+        <div class="container">
+            <a href="catalog.html">
+                <div class="nike">
                     <div class="text">
                         <h2>Nike Red</h2>
                     </div>
-                    <p class="view_item">dodelt</p>
                     <img src="./img/red-nike.png" alt="red nike">
                 </div>
             </a>
             <a href="catalog.html">
-                <div class="banner girl">
+                <div class="girl">
                     <div class="text">
                         <h2>Caps & Hats</h2>
                         <span>Sale -50%</span>
@@ -72,46 +74,53 @@
     </section>
     <!-- BEST OFFER -->
     <section class="best_offer">
-        <div class="conteiner">
+        <div class="container">
             <div class="title">
                 <h1>Best offer</h1>
                 <p>This offer is valid in-store and online. Prices displayed reflect this additional discount. This
                     offer ends at 11:59 GMT on March 1st 2019</p>
             </div>
-            <div class="banner_conteiner">
+            <div class="banner_container">
                 <a class="next_a" id="first_next_up"><img src="./img/arrow-up.png" alt="" srcset=""></a>
                 <div id="first_banner"></div>
                 <a class="next_a" id="first_next_down"><img src="./img/arrow-down.png" alt="" srcset=""></a>
                 <span class="plus">+</span>
                 <a class="next_a" id="second_next_up"><img src="./img/arrow-up.png" alt="" srcset=""></a>
-                <div id="second_banner"> </div>
+                <div id="second_banner"></div>
                 <a class="next_a" id="second_next_down"><img src="./img/arrow-down.png" alt="" srcset=""></a>
-                <span class="plus">=</span>
+
+                <span class="plus ravno">=</span>
                 <div class="third_banner">
                     <div id="total_price">
                         <span id="old_price"></span>
                         <h2 id="price_with_discount"></h2>
+                        <div class="button_container1"> <a href="shoping-bag.html"> <input type="button"
+                                    value="Add to bag" id="add_to_bag1"></a></div>
                     </div>
-                    <input type="button" value="Add to bag" id="add_to_bag">
                 </div>
+                <div class="button_container2"> <a href="shoping-bag.html"> <input type="button" value="Add to bag"
+                            id="add_to_bag2"></a></div>
             </div>
         </div>
     </section>
 
 
     <section class="new_arivals">
-        <div class="conteiner">
-            <div id="banner_conteiner"> </div>
-            <div class="button_conteiner">
-                <input type="button" value="Show more">
+        <div class="container">
+            <div class="title">
+                <h1>New arrivals</h1>
+            </div>
+            <div id="new_arrivals"> </div>
+            <div class="button_container">
+                <input type="button" value="All arrivals">
             </div>
         </div>
     </section>
 
     <!-- SECTION LINKS -->
     <section class="section_links">
-        <div class="conteiner">
-            <div class="links_conteiner">
+        <div class="container">
+            <div class="links_container">
                 <div class="nav quick_links">
                     <h3>Quick Links</h3>
                     <nav class="links">
@@ -138,13 +147,12 @@
                     </nav>
                 </div>
             </div>
-            <div class="contact_conteiner">
+            <div class="contact_container">
                 <div class="questions">
                     <h3>Questions</h3>
                     <div class="tweet"> <img src="./img/twi_ico.png" alt="twitter" srcset="">
                         <p>Tweet us <b>@template</b></p>
                     </div>
-
                 </div>
                 <div class="order_by_phone">
                     <h3>Order by phone</h3>
@@ -168,7 +176,7 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="conteiner">
+        <div class="container">
             <div class="footer_content">
                 <p>© 2010–2015, The Template Group inc.</p>
                 <div class=""><a href="#">Share</a><img src="./img/share.png" alt="share"></div>

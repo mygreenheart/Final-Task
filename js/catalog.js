@@ -25,7 +25,7 @@ window.catalog = [{
     colors: ['Black', 'White'],
     sizes: ['UK 18'],
     thumbnail: './img/catalog/photo1.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    preview: ['./img/preview/Boyfriend T-Shirt_01.jfif', './img/preview/Boyfriend T-Shirt_02.jfif', './img/preview/Boyfriend T-Shirt_03.jfif'] // replace with paths to images extracted from item layout
 }, {
     id: '0fdfa061-838d-42ab-ae06-99c66115f633',
     dateAdded: '2017-02-12T11:14:29.000Z',
@@ -81,7 +81,7 @@ window.catalog = [{
     colors: [],
     sizes: [],
     thumbnail: './img/catalog/photo-7.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    preview: ['./img/preview/Romper_01.jfif', './img/preview/Romper_02.jfif', './img/preview/Romper_03.jfif'] // replace with paths to images extracted from item layout
 }, {
     id: '80d32566-d81c-4ba0-9edf-0eceda3b4360',
     dateAdded: '2017-01-01T13:26:14.000Z',
@@ -109,7 +109,7 @@ window.catalog = [{
     colors: ['Green'],
     sizes: ['UK 19'],
     thumbnail: './img/catalog/photo-9.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    preview: ['./img/preview/Floral Blazer_01.jfif', './img/preview/Floral Blazer_02.jfif', './img/preview/Floral Blazer_03.jfif'] // replace with paths to images extracted from item layout
 }, {
     id: '8c061815-6a7d-4465-bb78-1bdc6c5adebf',
     dateAdded: '2017-08-28T09:15:36.000Z',
@@ -123,7 +123,7 @@ window.catalog = [{
     colors: ['Phillipa wash'],
     sizes: ['UK 17'],
     thumbnail: './img/catalog/photo-10.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    preview: ['./img/preview/Only_F_01.jfif', './img/preview/Only_F_02.jfif', './img/preview/Only_F_03.jfif'] // replace with paths to images extracted from item layout
 }, {
     id: '9ded7821-e510-4a16-ba9f-57c1e3442ad8',
     dateAdded: '2017-07-19T15:11:04.000Z',
@@ -137,7 +137,7 @@ window.catalog = [{
     colors: [],
     sizes: [],
     thumbnail: './img/catalog/photo-8.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    preview: ['./img/preview/military-maxi-blazer_01.jfif', './img/preview/military-maxi-blazer_02.jfif', './img/preview/military-maxi-blazer_03.jfif'] // replace with paths to images extracted from item layout
 }, {
     id: 'bec71daa-d133-473d-bbb0-1ee0a427a17d',
     dateAdded: '2017-03-09T17:51:45.000Z',

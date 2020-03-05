@@ -2,30 +2,32 @@
 .section_banners {
   width: 1300px;
   margin: auto;
-  height: 385px;
+
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
 }
-.section_banners .conteiner {
+.section_banners .container {
   width: 1180px;
+  height: 385px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
-.section_banners .banner {
+.section_banners .girl,
+.nike {
   position: relative;
   width: 592px;
 }
 
-.section_banners .banner .text {
+.section_banners div .text {
   position: absolute;
   top: 65px;
   right: 100px;
   text-align: center;
 }
 .girl {
-  height: 385px;
+  border-left: 1px solid #e5e5e5;
 }
 .girl h2 {
   margin-bottom: -3px;
@@ -56,7 +58,7 @@
   margin-top: -200px;
   font-size: 34px;
 }
-.best_offer .banner_conteiner {
+.best_offer .banner_container {
   margin-top: 115px;
   position: relative;
   display: flex;
@@ -65,6 +67,12 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
+}
+.button_container1 {
+  margin-left: -30px;
+}
+.button_container2 {
+  display: none;
 }
 .best_offer .next_a {
   cursor: pointer;
@@ -79,7 +87,7 @@
 }
 #second_next_up {
   top: -50px;
-  left: 530px;
+  left: 570px;
 }
 #first_next_down {
   bottom: 30px;
@@ -87,13 +95,14 @@
 }
 #second_next_down {
   bottom: 30px;
-  left: 530px;
+  left: 570px;
 }
-.banner_conteiner p {
+.banner_container p {
   font-weight: normal;
 }
 .third_banner {
-  margin-bottom: 90px;
+  width: 250px;
+  margin-bottom: 100px;
 }
 .third_banner .total_price {
   margin-left: 15px;
@@ -124,10 +133,10 @@
 /* NEW ARRIVALS */
 .new_arivals {
   border-top: 1px solid #e5e5e5;
-  margin: auto auto;
+  margin: auto;
   margin-top: 75px;
 }
-.new_arivals #banner_conteiner {
+.new_arivals .container #new_arrivals {
   margin-top: 115px;
   display: flex;
   flex-direction: row;
@@ -136,13 +145,8 @@
   align-items: center;
   text-align: center;
 }
-.new_arivals .second_banner:before {
-  content: url(/img/New.png);
-  position: absolute;
-  top: 20px;
-}
 
-.new_arivals .button_conteiner {
+.new_arivals .button_container {
   margin: 75px 420px 0 420px;
 }
 
@@ -157,7 +161,6 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
- 
 }
 .section_links h3 {
   line-height: 65px;
@@ -226,6 +229,246 @@
   justify-content: space-around;
   align-items: center;
 }
-.footer_content nav a{
+.footer_content nav a {
   margin-left: 31px;
+}
+
+@media screen and (max-width: 1024px) {
+  /* BANNERS */
+  .section_banners {
+    width: 768px;
+    margin: auto;
+  }
+  .section_banners .container {
+    width: 690px;
+    height: 228px;
+  }
+  .section_banners img {
+    height: 228px;
+    width: 345px;
+  }
+  .section_banners h2 {
+    font-size: 22px;
+  }
+  .section_banners .girl,
+  .nike {
+    width: 345px;
+  }
+  .section_banners div .text {
+    top: 10px;
+    right: 50px;
+  }
+  .text span {
+    font-size: 16px;
+  }
+
+  /* BEST OFFER */
+  .best_offer,
+  .new_arivals {
+    margin: auto;
+    width: 768px;
+    margin-top: 100px;
+  }
+  .title h1 {
+    font-size: 50px;
+    margin-bottom: -10px;
+  }
+  .best_offer .banner_container {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .button_container1 {
+    display: none;
+  }
+  .button_container2 {
+    display: flex;
+  }
+  #first_banner,
+  #second_banner {
+    height: 400px;
+    margin-bottom: 100px;
+  }
+  #first_next_up {
+    top: -40px;
+    left: 80px;
+  }
+  #first_next_down {
+    bottom: 150px;
+    left: 80px;
+  }
+  #second_next_up {
+    top: -40px;
+    left: 370px;
+  }
+  #second_next_down {
+    bottom: 150px;
+    left: 370px;
+  }
+  .third_banner {
+    width: 150px;
+  }
+  .third_banner #total_price {
+    margin-left: 40px;
+    margin-top: -85px;
+  }
+  .third_banner h2 {
+    font-size: 30px;
+  }
+  .third_banner span {
+    right: 40px;
+    bottom: -15px;
+    font-size: 22px;
+  }
+  .button_container2 {
+    margin-left: 180px;
+  }
+  .new_arivals {
+    width: 768px;
+  }
+  .new_arivals .container #new_arrivals {
+    margin-top: 115px;
+  }
+
+  .new_arivals .button_container {
+    margin-top: 50px;
+    margin-left: 180px;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* BANNERS */
+  .section_banners {
+    width: 768px;
+    margin: auto;
+  }
+  .section_banners .container {
+    width: 690px;
+    height: 228px;
+  }
+  .section_banners img {
+    height: 228px;
+    width: 345px;
+  }
+  .section_banners h2 {
+    font-size: 22px;
+  }
+  .section_banners .girl,
+  .nike {
+    width: 345px;
+  }
+  .section_banners div .text {
+    top: 10px;
+    right: 50px;
+  }
+  .text span {
+    font-size: 16px;
+  }
+
+  /* BEST OFFER */
+  .best_offer,
+  .new_arivals {
+    margin: auto;
+    width: 375px;
+    margin-top: 30px;
+  }
+  .plus {
+    font-size: 26px;
+    margin-top: -100px;
+  }
+  .ravno {
+    margin-left: 50px;
+    margin-top: 70px;
+  }
+  .title h1 {
+    font-size: 26px;
+    margin-bottom: -10px;
+  }
+  .best_offer .title p {
+    font-size: 14px;
+    line-height: 30px;
+  }
+  .best_offer .banner_container {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .button_container1 {
+    display: none;
+  }
+  .button_container2 {
+    display: flex;
+  }
+  #first_banner,
+  #second_banner {
+    height: 250px;
+    margin-bottom: 150px;
+  }
+  #first_next_up {
+    top: -50px;
+    left: 60px;
+  }
+  #first_next_down {
+    bottom: 220px;
+    left: 60px;
+  }
+  #second_next_up {
+    top: -50px;
+    left: 250px;
+  }
+  #second_next_down {
+    bottom: 220px;
+    left: 250px;
+  }
+  .third_banner {
+    width: 150px;
+  }
+  .third_banner #total_price {
+    margin-left: 0;
+    margin-top: 50px;
+  }
+  .third_banner h2 {
+    font-size: 30px;
+  }
+  .third_banner,
+  #price_with_discount {
+    margin: 0;
+  }
+  .third_banner span {
+    right: 0;
+    bottom: 0px;
+    font-size: 22px;
+  }
+  .button_container2 input {
+    margin-top: -100px;
+    margin-bottom: 50px;
+    margin-left: -90px;
+  }
+  .new_arivals {
+    border: 0px solid black;
+    width: 375px;
+  }
+  .new_arivals .title {
+    margin-top: 150px;
+  }
+  .new_arivals .title h1 {
+    font-size: 26px;
+  }
+  .new_arivals .container #new_arrivals {
+    margin-top: 115px;
+  }
+  .new_arivals .button_container {
+    margin-top: 50px;
+    margin-left: 50px;
+  }
+  .new_arivals .button_container input {
+    width: 220px;
+    height: 50px;
+  }
+  .best_offer .button_container2 {
+    margin-top: 50px;
+    margin-left: 50px;
+  }
+  .best_offer .button_container2 input {
+    width: 220px;
+    height: 60px;
+  }
 }
