@@ -181,13 +181,16 @@ function createItem(container, img, preview, name, description, price, size, col
     }
     divItemInfo.appendChild(pError);
     divItemInfo.appendChild(btnAddToCart);
-    for (const e of preview) {
+    for (let i = 0; i < preview.length; i++) {
         let divImg = document.createElement("div");
         let previewImg = document.createElement("img");
-        previewImg.src = e;
+        previewImg.src = preview[i];
         previewImg.alt = "preview image"
         previewImg.width = "196"
         previewImg.height = "125"
+        previewImg.onclick = function () {
+            mainImg.src = preview[i]
+        }
         divItemImages.appendChild(divImg)
         divImg.appendChild(previewImg);
     }
@@ -227,6 +230,7 @@ function createBagItem(container, img, name, price, color, size, count, isNew) {
     aRemove.id = "remove_item"
 
     imgMain.src = img;
+    imgMain.className = "bag_image";
     imgMain.alt = "main image";
     imgMain.width = "265";
     imgMain.height = "350";
@@ -425,13 +429,13 @@ function countPriceDiscount(string1, string2) {
 }
 document.body.onclick = function () {
     let target = event.target;
-    
+
     let banner = target.parentElement;
     if (target.id == "a_close") {
         banner.style.display = "none"
     }
     let bag_container = banner.parentElement.parentElement.childNodes[1].childNodes[0].textContent;
-   
+
 
     if (banner.className == "banner") {
         if (banner.childNodes[2].textContent != "") {

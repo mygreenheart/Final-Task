@@ -16,6 +16,9 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+.item__image div img:hover {
+  filter: brightness(0.5);
+}
 .item__info {
   width: 540px;
   position: relative;
@@ -50,8 +53,13 @@
   display: flex;
   flex-direction: row;
 }
+.item__info .size_color span {
+  font-size: 12px;
+  font-weight: normal;
+}
 .item__info .size_color label {
   cursor: pointer;
+  font-size: 14px;
   margin-left: 20px;
 }
 .item__info .size_color a:hover {
@@ -63,6 +71,7 @@
 }
 .item__info input[type="radio"],
 label {
+  border: 1px solid #e5e5e5;
   cursor: pointer;
 }
 .item__info input[type="radio"] {
@@ -78,4 +87,44 @@ label {
 .back_to_catalog a {
   font-size: 16px;
   line-height: 60px;
+}
+@media screen and (max-width: 1024px) {
+  .items {
+    height: 900px;
+    width: 768px;
+  }
+  #item {
+    width: 690px;
+    margin-top: 0;
+    flex-wrap: wrap;
+  }
+
+  .item__image div img:hover {
+    filter: brightness(0.5);
+  }
+  .item__info {
+    text-align: center;
+    width: 442px;
+    height: 270px;
+    align-items: center;
+  }
+  .item__info h3 {
+    order: -5;
+    font-size: 20px;
+  }
+  .item__info .description {
+    order: 0;
+    font-size: 14px;
+  }
+  .item__info .price {
+    order: -1;
+    font-size: 18px;
+  }
+  .item__info input[type="button"] {
+    font-size: 20px;
+    padding: 20px 80px;
+    margin-top: 10px;
+    margin-left: 55px;
+    width: 270px;
+  }
 }
