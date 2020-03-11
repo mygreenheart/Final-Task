@@ -13,6 +13,7 @@ let firstBanner = document.getElementById("first_banner"),
     h3PriceDiscount = document.getElementById("price_with_discount"),
     btnAddToCart1 = document.getElementById("add_to_bag1"),
     btnAddToCart2 = document.getElementById("add_to_bag2"),
+    allArrivals = document.getElementById("all_arrivals"),
     firstBannerArray = [],
     secondBannerArray = [];
 isDiscount = "true";

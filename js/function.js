@@ -137,6 +137,7 @@ function createItem(container, img, preview, name, description, price, size, col
     btnAddToCart.type = "button";
     btnAddToCart.value = "Add to bag";
     btnAddToCart.id = "add_to_bag";
+    btnAddToCart.style.zIndex = "1"
     mainImg.src = preview[0];
     mainImg.alt = "main image";
     mainImg.className = "main_image"

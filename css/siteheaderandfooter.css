@@ -430,15 +430,20 @@ header .mobile {
   }
   .order_by_phone {
     margin-top: 40px;
+    margin-right: 30px;
   }
   .contact_container .questions,
   .order_by_phone h3 {
     font-size: 16px;
     margin-bottom: -20px;
   }
+  .contact_container{
+    position: relative;
+  }
   .anotation .contact_logo {
-    margin-left: 30px;
-    margin-top: 100px;
+    position: absolute;
+    right: 260px;
+    bottom: -180px;
   }
   /* footer */
   .footer {
@@ -609,6 +614,9 @@ header .mobile {
     margin-bottom: 130px;
     position: relative;
   }
+  .contact_container {
+    position: relative;
+  }
   .contact_container .questions,
   .order_by_phone,
   .quick_links,
@@ -672,7 +680,7 @@ header .mobile {
   .anotation .contact_logo {
     position: absolute;
     right: 0;
-    bottom: -185px;
+    bottom: -10px;
   }
   /* footer */
   .footer {
