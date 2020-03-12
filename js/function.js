@@ -63,7 +63,7 @@ function displayBagVariable() {
     if (isDiscount == "true") {
         totalPrice -= bestOffer.discount;
     }
-    bagPrice.textContent = " £" + totalPrice.toFixed(2);
+    bagPrice.textContent = " £" + (+totalPrice.toFixed(2));
     bagCount.textContent = "(" + localStorage.length + ")";
 }
 function createDiv(container, img, name, price, oldPrice, isNew, id) {
